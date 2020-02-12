@@ -1,0 +1,14 @@
+/home/leo/Documentos/hackatonXP/api/src/Hackaton.Api/bin/Debug/netcoreapp2.1/Api.deps.json
+/home/leo/Documentos/hackatonXP/api/src/Hackaton.Api/bin/Debug/netcoreapp2.1/Api.runtimeconfig.json
+/home/leo/Documentos/hackatonXP/api/src/Hackaton.Api/bin/Debug/netcoreapp2.1/Api.runtimeconfig.dev.json
+/home/leo/Documentos/hackatonXP/api/src/Hackaton.Api/bin/Debug/netcoreapp2.1/Api.dll
+/home/leo/Documentos/hackatonXP/api/src/Hackaton.Api/bin/Debug/netcoreapp2.1/Api.pdb
+/home/leo/Documentos/hackatonXP/api/src/Hackaton.Api/obj/Debug/netcoreapp2.1/Api.csprojAssemblyReference.cache
+/home/leo/Documentos/hackatonXP/api/src/Hackaton.Api/obj/Debug/netcoreapp2.1/Api.csproj.CoreCompileInputs.cache
+/home/leo/Documentos/hackatonXP/api/src/Hackaton.Api/obj/Debug/netcoreapp2.1/Api.RazorAssemblyInfo.cache
+/home/leo/Documentos/hackatonXP/api/src/Hackaton.Api/obj/Debug/netcoreapp2.1/Api.RazorAssemblyInfo.cs
+/home/leo/Documentos/hackatonXP/api/src/Hackaton.Api/obj/Debug/netcoreapp2.1/Api.AssemblyInfoInputs.cache
+/home/leo/Documentos/hackatonXP/api/src/Hackaton.Api/obj/Debug/netcoreapp2.1/Api.AssemblyInfo.cs
+/home/leo/Documentos/hackatonXP/api/src/Hackaton.Api/obj/Debug/netcoreapp2.1/Api.RazorTargetAssemblyInfo.cache
+/home/leo/Documentos/hackatonXP/api/src/Hackaton.Api/obj/Debug/netcoreapp2.1/Api.dll
+/home/leo/Documentos/hackatonXP/api/src/Hackaton.Api/obj/Debug/netcoreapp2.1/Api.pdb

@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/leo/Documentos/hackatonXP/api/src/Hackaton.Domain/Domain.csproj": {}
+  },
+  "projects": {
+    "/home/leo/Documentos/hackatonXP/api/src/Hackaton.Domain/Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/leo/Documentos/hackatonXP/api/src/Hackaton.Domain/Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "/home/leo/Documentos/hackatonXP/api/src/Hackaton.Domain/Domain.csproj",
+        "packagesPath": "/home/leo/.nuget/packages/",
+        "outputPath": "/home/leo/Documentos/hackatonXP/api/src/Hackaton.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/home/leo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
