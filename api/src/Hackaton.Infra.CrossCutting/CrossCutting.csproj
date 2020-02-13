@@ -1,5 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <ItemGroup>
+    <ProjectReference Include="..\Hackaton.Domain\Domain.csproj" />
+    <ProjectReference Include="..\Hackaton.Infra.Data\Data.csproj" />
+    <ProjectReference Include="..\Hackaton.Application\Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.0" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>

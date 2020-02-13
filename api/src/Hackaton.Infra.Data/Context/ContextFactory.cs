@@ -5,10 +5,11 @@ namespace Hackaton.Infra.Data.Context
 {
     public class ContextFactory : IDesignTimeDbContextFactory<MyContext>
     {
-        public MyContext CreateDbContext(string[] args){
-            var connectionString = "";
+        public MyContext CreateDbContext(string[] args)
+        {
+            var connectionString = "Server=localhost;Port=3306;Database=HackaDB;Uid=root;Pwd=admin";
             var optionsBuilder = new DbContextOptionsBuilder<MyContext>();
-            optionsBuilder.UseMySQL(connectionString);
+            optionsBuilder.UseMySql(connectionString);
             return new MyContext(optionsBuilder.Options);
         }
     }

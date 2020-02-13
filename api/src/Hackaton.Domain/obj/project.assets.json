@@ -688,28 +688,30 @@
     ]
   },
   "packageFolders": {
-    "/home/leo/.nuget/packages/": {},
-    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\leonardobonetti\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/leo/Documentos/hackatonXP/api/src/Hackaton.Domain/Domain.csproj",
+      "projectUniqueName": "C:\\Users\\leonardobonetti\\Documents\\Projetos\\HackatonXP\\api\\src\\Hackaton.Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "/home/leo/Documentos/hackatonXP/api/src/Hackaton.Domain/Domain.csproj",
-      "packagesPath": "/home/leo/.nuget/packages/",
-      "outputPath": "/home/leo/Documentos/hackatonXP/api/src/Hackaton.Domain/obj/",
+      "projectPath": "C:\\Users\\leonardobonetti\\Documents\\Projetos\\HackatonXP\\api\\src\\Hackaton.Domain\\Domain.csproj",
+      "packagesPath": "C:\\Users\\leonardobonetti\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\leonardobonetti\\Documents\\Projetos\\HackatonXP\\api\\src\\Hackaton.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/home/leo/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\leonardobonetti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

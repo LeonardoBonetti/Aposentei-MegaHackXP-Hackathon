@@ -2,6 +2,32 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
+      "AutoMapper/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/6.1.0": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "8.1.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
         "dependencies": {
@@ -1610,18 +1636,18 @@
           "lib/netstandard1.3/Microsoft.DotNet.PlatformAbstractions.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore/2.1.1": {
+      "Microsoft.EntityFrameworkCore/2.1.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Abstractions": "2.1.1",
-          "Microsoft.EntityFrameworkCore.Analyzers": "2.1.1",
+          "Microsoft.EntityFrameworkCore.Abstractions": "2.1.4",
+          "Microsoft.EntityFrameworkCore.Analyzers": "2.1.4",
           "Microsoft.Extensions.Caching.Memory": "2.1.1",
           "Microsoft.Extensions.DependencyInjection": "2.1.1",
           "Microsoft.Extensions.Logging": "2.1.1",
           "Remotion.Linq": "2.2.0",
           "System.Collections.Immutable": "1.5.0",
           "System.ComponentModel.Annotations": "4.5.0",
-          "System.Diagnostics.DiagnosticSource": "4.5.0",
+          "System.Diagnostics.DiagnosticSource": "4.5.1",
           "System.Interactive.Async": "3.1.1"
         },
         "compile": {
@@ -1631,7 +1657,7 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Abstractions/2.1.1": {
+      "Microsoft.EntityFrameworkCore.Abstractions/2.1.4": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
@@ -1640,14 +1666,14 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Analyzers/2.1.1": {
+      "Microsoft.EntityFrameworkCore.Analyzers/2.1.4": {
         "type": "package"
       },
-      "Microsoft.EntityFrameworkCore.Design/2.1.1": {
+      "Microsoft.EntityFrameworkCore.Design/2.1.4": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.EntityFrameworkCore.Relational": "2.1.1"
+          "Microsoft.EntityFrameworkCore.Relational": "2.1.4"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll": {}
@@ -1671,10 +1697,10 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.InMemory.dll": {}
         }
       },
-      "Microsoft.EntityFrameworkCore.Relational/2.1.1": {
+      "Microsoft.EntityFrameworkCore.Relational/2.1.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "2.1.1"
+          "Microsoft.EntityFrameworkCore": "2.1.4"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll": {}
@@ -2601,6 +2627,15 @@
           }
         }
       },
+      "MySqlConnector/0.47.1": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp2.1/MySqlConnector.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/MySqlConnector.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.3": {
         "type": "package",
         "dependencies": {
@@ -2636,6 +2671,33 @@
         },
         "runtime": {
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        }
+      },
+      "Pomelo.EntityFrameworkCore.MySql/2.1.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "2.1.4",
+          "MySqlConnector": "0.47.1",
+          "Pomelo.JsonObject": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Pomelo.EntityFrameworkCore.MySql.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Pomelo.EntityFrameworkCore.MySql.dll": {}
+        }
+      },
+      "Pomelo.JsonObject/2.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Pomelo.JsonObject.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Pomelo.JsonObject.dll": {}
         }
       },
       "Remotion.Linq/2.2.0": {
@@ -3033,7 +3095,7 @@
           "ref/netstandard1.3/System.Diagnostics.Debug.dll": {}
         }
       },
-      "System.Diagnostics.DiagnosticSource/4.5.0": {
+      "System.Diagnostics.DiagnosticSource/4.5.1": {
         "type": "package",
         "compile": {
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
@@ -4333,10 +4395,96 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "AutoMapper": "9.0.0",
+          "Data": "1.0.0",
+          "Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Application.dll": {}
+        }
+      },
+      "CrossCutting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "Application": "1.0.0",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "6.1.0",
+          "Data": "1.0.0",
+          "Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CrossCutting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CrossCutting.dll": {}
+        }
+      },
+      "Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore.Design": "2.1.4",
+          "Pomelo.EntityFrameworkCore.MySql": "2.1.4"
+        },
+        "compile": {
+          "bin/placeholder/Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Data.dll": {}
+        }
+      },
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "AutoMapper/9.0.0": {
+      "sha512": "xCqvoxT4HIrNY/xlXG9W+BA/awdrhWvMTKTK/igkGSRbhOhpl3Q8O8Gxlhzjc9JsYqE7sS6AxgyuUUvZ6R5/Bw==",
+      "type": "package",
+      "path": "automapper/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.9.0.0.nupkg.sha512",
+        "automapper.nuspec",
+        "lib/net461/AutoMapper.dll",
+        "lib/net461/AutoMapper.pdb",
+        "lib/net461/AutoMapper.xml",
+        "lib/netstandard2.0/AutoMapper.dll",
+        "lib/netstandard2.0/AutoMapper.pdb",
+        "lib/netstandard2.0/AutoMapper.xml"
+      ]
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/6.1.0": {
+      "sha512": "KjuQqNFqE0GXCaV10GBlqE5thqgMz0hgzcLidCRBq+nEo9KiFspsRWOsRrk4sQKM3UQqOYRIKfFFO3XBnUo4Yg==",
+      "type": "package",
+      "path": "automapper.extensions.microsoft.dependencyinjection/6.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.extensions.microsoft.dependencyinjection.6.1.0.nupkg.sha512",
+        "automapper.extensions.microsoft.dependencyinjection.nuspec",
+        "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll",
+        "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.pdb"
+      ]
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "sha512": "owAlEIUZXWSnkK8Z1c+zR47A0X6ykF4XjbPok4lQKNuciUfHLGPd6QnI+rt/8KlQ17PmF+I4S3f+m+Qe4IvViw==",
       "type": "package",
@@ -5745,48 +5893,48 @@
         "microsoft.dotnet.platformabstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore/2.1.1": {
-      "sha512": "JuWdlcEkd6VePS1uaiEfGDCuXNkRHFdNuEEdRhlU5E/ikuhSBDy7j0L4hoLAO4/w5u4YpSy59Xwtsq+cIAo+3w==",
+    "Microsoft.EntityFrameworkCore/2.1.4": {
+      "sha512": "pxMNnSckkrbrdqxGrrMY1zgFexDLz58KO5FCCCPyGggFbUOfi6B90695ts6GnxSvoovPjw4LM3zNq1HKLfsEGw==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore/2.1.1",
+      "path": "microsoft.entityframeworkcore/2.1.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.dll",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.xml",
-        "microsoft.entityframeworkcore.2.1.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.2.1.4.nupkg.sha512",
         "microsoft.entityframeworkcore.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Abstractions/2.1.1": {
-      "sha512": "ZAJuDHQ6y8UMfoEPzASNPKah0PtanxBmygtoFFYBg4mwBwHHIekY7TKZZT8nqKs4pSNC1b7z+gRLbSB5ILGlWQ==",
+    "Microsoft.EntityFrameworkCore.Abstractions/2.1.4": {
+      "sha512": "MHie3yU6QK8QW0LnHrICJWT19uDW0m9xDzLDOSO9pBehNtmPyuywaJFLmCkzLiZdJlKN85IH+2jRYV3+1dLnZA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.abstractions/2.1.1",
+      "path": "microsoft.entityframeworkcore.abstractions/2.1.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
-        "microsoft.entityframeworkcore.abstractions.2.1.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.2.1.4.nupkg.sha512",
         "microsoft.entityframeworkcore.abstractions.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Analyzers/2.1.1": {
-      "sha512": "DiKQA07lCZLV5yyTj0KHh+wJzWl8sO2b1sdW31afxgV6NTrFq29NBQKnxllGkwZ5xr8KwrppRYdHhN8r0+FYVQ==",
+    "Microsoft.EntityFrameworkCore.Analyzers/2.1.4": {
+      "sha512": "I7CsQN498nz3t9AnItGUFbwFaktMWLqjvUi3HGL8lQfkeEDTO1tJSdTeLX3mR/+1UIaejQSfYAn0F6l9e5lsmA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.analyzers/2.1.1",
+      "path": "microsoft.entityframeworkcore.analyzers/2.1.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll",
-        "microsoft.entityframeworkcore.analyzers.2.1.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.analyzers.2.1.4.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Design/2.1.1": {
-      "sha512": "Bu5c0Eec+tSW1PA0NxDgxzF0cMQjeGQC5RtBtMm3heow2J7X+2LhdkGFPr4IAL6bFLHJiVcE3csng3i6fB/PtA==",
+    "Microsoft.EntityFrameworkCore.Design/2.1.4": {
+      "sha512": "Nd7I9jnF6kPW2ATyKo9GQQc0v2shVCgCP/OeKYrRwxnVoYpA57beQHPBy5033SfZCQNtNFHZxN8Co3as7G3GHA==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.design/2.1.1",
+      "path": "microsoft.entityframeworkcore.design/2.1.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -5796,7 +5944,7 @@
         "lib/net461/Microsoft.EntityFrameworkCore.Design.xml",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.xml",
-        "microsoft.entityframeworkcore.design.2.1.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.2.1.4.nupkg.sha512",
         "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
@@ -5813,16 +5961,16 @@
         "microsoft.entityframeworkcore.inmemory.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.Relational/2.1.1": {
-      "sha512": "NqH03e/oh0KEy5mepy0Eb5nx49eZOKnpa2/d8iwy7IJTapmqdNWx03kuUycaJ+haHmE5Ad8KtzDJK/Nz3OfFFA==",
+    "Microsoft.EntityFrameworkCore.Relational/2.1.4": {
+      "sha512": "0eaUYUZ4KaIbjLoqTXdRADlwzVN/rWjWFmaCu+5xGYPvO9FLZqdHhLIa/zgocwAvTxGiUpHm5+D4YWK6dODJNw==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.relational/2.1.1",
+      "path": "microsoft.entityframeworkcore.relational/2.1.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.dll",
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Relational.xml",
-        "microsoft.entityframeworkcore.relational.2.1.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.relational.2.1.4.nupkg.sha512",
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
@@ -6942,6 +7090,22 @@
         "version.txt"
       ]
     },
+    "MySqlConnector/0.47.1": {
+      "sha512": "bwEjq0yLcf6SKCS64/kjql8RC/mFP9n7tGVqqShMW2QgoBJr9tflEWy8S0jupMk4oMPqjqjooMQqqwzZROwPug==",
+      "type": "package",
+      "path": "mysqlconnector/0.47.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/MySqlConnector.dll",
+        "lib/net461/MySqlConnector.dll",
+        "lib/netcoreapp2.1/MySqlConnector.dll",
+        "lib/netstandard1.3/MySqlConnector.dll",
+        "lib/netstandard2.0/MySqlConnector.dll",
+        "mysqlconnector.0.47.1.nupkg.sha512",
+        "mysqlconnector.nuspec"
+      ]
+    },
     "NETStandard.Library/2.0.3": {
       "sha512": "st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
       "type": "package",
@@ -7113,6 +7277,30 @@
         "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
         "newtonsoft.json.bson.1.0.1.nupkg.sha512",
         "newtonsoft.json.bson.nuspec"
+      ]
+    },
+    "Pomelo.EntityFrameworkCore.MySql/2.1.4": {
+      "sha512": "/GngSqZ0GgRh6NOpnQvQQunYbu4drSE9O3omshM4aVj4/CSRrSdkGobqaSs+0erMVK6DpfLXINIWBMZqIz1xUQ==",
+      "type": "package",
+      "path": "pomelo.entityframeworkcore.mysql/2.1.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Pomelo.EntityFrameworkCore.MySql.dll",
+        "pomelo.entityframeworkcore.mysql.2.1.4.nupkg.sha512",
+        "pomelo.entityframeworkcore.mysql.nuspec"
+      ]
+    },
+    "Pomelo.JsonObject/2.0.0": {
+      "sha512": "sMN9ETMoYfqCegOCVkOkOkfXK3ceH8nWkSeZPgLwfnx6UnqVXTl/ScIZs+x5Q8qgiPmYYCPmtolxNQ0QrcU97g==",
+      "type": "package",
+      "path": "pomelo.jsonobject/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Pomelo.JsonObject.dll",
+        "pomelo.jsonobject.2.0.0.nupkg.sha512",
+        "pomelo.jsonobject.nuspec"
       ]
     },
     "Remotion.Linq/2.2.0": {
@@ -8045,10 +8233,10 @@
         "system.diagnostics.debug.nuspec"
       ]
     },
-    "System.Diagnostics.DiagnosticSource/4.5.0": {
-      "sha512": "eIHRELiYDQvsMToML81QFkXEEYXUSUT2F28t1SGrevWqP+epFdw80SyAXIKTXOHrIEXReFOEnEr7XlGiC2GgOg==",
+    "System.Diagnostics.DiagnosticSource/4.5.1": {
+      "sha512": "zCno/m44ymWhgLFh7tELDG9587q0l/EynPM0m4KgLaWQbz/TEKvNRX2YT5ip2qXW/uayifQ2ZqbnErsKJ4lYrQ==",
       "type": "package",
-      "path": "system.diagnostics.diagnosticsource/4.5.0",
+      "path": "system.diagnostics.diagnosticsource/4.5.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -8064,7 +8252,7 @@
         "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.xml",
         "lib/portable-net45+win8+wpa81/System.Diagnostics.DiagnosticSource.dll",
         "lib/portable-net45+win8+wpa81/System.Diagnostics.DiagnosticSource.xml",
-        "system.diagnostics.diagnosticsource.4.5.0.nupkg.sha512",
+        "system.diagnostics.diagnosticsource.4.5.1.nupkg.sha512",
         "system.diagnostics.diagnosticsource.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -11784,43 +11972,74 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "Application/1.0.0": {
+      "type": "project",
+      "path": "../Hackaton.Application/Application.csproj",
+      "msbuildProject": "../Hackaton.Application/Application.csproj"
+    },
+    "CrossCutting/1.0.0": {
+      "type": "project",
+      "path": "../Hackaton.Infra.CrossCutting/CrossCutting.csproj",
+      "msbuildProject": "../Hackaton.Infra.CrossCutting/CrossCutting.csproj"
+    },
+    "Data/1.0.0": {
+      "type": "project",
+      "path": "../Hackaton.Infra.Data/Data.csproj",
+      "msbuildProject": "../Hackaton.Infra.Data/Data.csproj"
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Hackaton.Domain/Domain.csproj",
+      "msbuildProject": "../Hackaton.Domain/Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "Application >= 1.0.0",
+      "CrossCutting >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0"
     ]
   },
   "packageFolders": {
-    "/home/leo/.nuget/packages/": {},
-    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\leonardobonetti\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/leo/Documentos/hackatonXP/api/src/Hackaton.Api/Api.csproj",
+      "projectUniqueName": "C:\\Users\\leonardobonetti\\Documents\\Projetos\\HackatonXP\\api\\src\\Hackaton.Api\\Api.csproj",
       "projectName": "Api",
-      "projectPath": "/home/leo/Documentos/hackatonXP/api/src/Hackaton.Api/Api.csproj",
-      "packagesPath": "/home/leo/.nuget/packages/",
-      "outputPath": "/home/leo/Documentos/hackatonXP/api/src/Hackaton.Api/obj/",
+      "projectPath": "C:\\Users\\leonardobonetti\\Documents\\Projetos\\HackatonXP\\api\\src\\Hackaton.Api\\Api.csproj",
+      "packagesPath": "C:\\Users\\leonardobonetti\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\leonardobonetti\\Documents\\Projetos\\HackatonXP\\api\\src\\Hackaton.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/home/leo/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\leonardobonetti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\leonardobonetti\\Documents\\Projetos\\HackatonXP\\api\\src\\Hackaton.Application\\Application.csproj": {
+              "projectPath": "C:\\Users\\leonardobonetti\\Documents\\Projetos\\HackatonXP\\api\\src\\Hackaton.Application\\Application.csproj"
+            },
+            "C:\\Users\\leonardobonetti\\Documents\\Projetos\\HackatonXP\\api\\src\\Hackaton.Infra.CrossCutting\\CrossCutting.csproj": {
+              "projectPath": "C:\\Users\\leonardobonetti\\Documents\\Projetos\\HackatonXP\\api\\src\\Hackaton.Infra.CrossCutting\\CrossCutting.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -11844,6 +12063,7 @@
             "version": "[2.1.2, )"
           },
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
