@@ -5,15 +5,15 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Hackaton.Infra.Data.Mapping
 {
-    public class AnswerMap : IEntityTypeConfiguration<AnswerEntity>
+    public class TrailTypeMap : IEntityTypeConfiguration<TrailTypeEntity>
     {
-        public void Configure(EntityTypeBuilder<AnswerEntity> builder)
+        public void Configure(EntityTypeBuilder<TrailTypeEntity> builder)
         {
-            builder.ToTable("Answers");
+            builder.ToTable("TrailType");
             builder.HasKey(p => p.Id);
             builder.Property(c => c.Id).ValueGeneratedOnAdd();
             builder.Property(c => c.Description).IsRequired();
-            builder.Property(c => c.QuestionID).IsRequired();
+            // builder.HasMany(c => c.Trails).WithOne(e => e.Type);
         }
     }
 }

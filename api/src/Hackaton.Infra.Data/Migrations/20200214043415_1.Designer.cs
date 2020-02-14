@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20200213200606_Third1")]
-    partial class Third1
+    [Migration("20200214043415_1")]
+    partial class _1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,46 +19,43 @@ namespace Data.Migrations
                 .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Hackaton.Domain.Entities.AnswerEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<bool>("Correctly");
-
-                    b.Property<DateTime?>("CreateAt");
-
-                    b.Property<string>("Description")
-                        .IsRequired();
-
-                    b.Property<int>("QuestionID");
-
-                    b.Property<DateTime?>("UpdateAt");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("QuestionID");
-
-                    b.ToTable("Answers");
-                });
-
-            modelBuilder.Entity("Hackaton.Domain.Entities.QuestionEntity", b =>
+            modelBuilder.Entity("Hackaton.Domain.Entities.TrailEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime?>("CreateAt");
-
-                    b.Property<string>("Description")
-                        .IsRequired();
 
                     b.Property<int>("Reward");
 
+                    b.Property<string>("Title");
+
+                    b.Property<int>("TypeID");
+
                     b.Property<DateTime?>("UpdateAt");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Questions");
+                    b.HasIndex("TypeID")
+                        .IsUnique();
+
+                    b.ToTable("Trails");
+                });
+
+            modelBuilder.Entity("Hackaton.Domain.Entities.TrailTypeEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime?>("CreateAt");
+
+                    b.Property<int>("Description");
+
+                    b.Property<DateTime?>("UpdateAt");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TrailType");
                 });
 
             modelBuilder.Entity("Hackaton.Domain.Entities.UserEntity", b =>
@@ -66,14 +63,21 @@ namespace Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int>("Coins")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(0);
+
                     b.Property<DateTime?>("CreateAt");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasMaxLength(256);
 
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasMaxLength(32);
+
+                    b.Property<int>("TrailID");
 
                     b.Property<DateTime?>("UpdateAt");
 
@@ -82,14 +86,14 @@ namespace Data.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Hackaton.Domain.Entities.AnswerEntity", b =>
+            modelBuilder.Entity("Hackaton.Domain.Entities.TrailEntity", b =>
                 {
-                    b.HasOne("Hackaton.Domain.Entities.QuestionEntity")
-                        .WithMany("Answers")
-                        .HasForeignKey("QuestionID")
+                    b.HasOne("Hackaton.Domain.Entities.TrailTypeEntity", "Type")
+                        .WithOne()
+                        .HasForeignKey("Hackaton.Domain.Entities.TrailEntity", "TypeID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
