@@ -8,9 +8,7 @@ namespace Hackaton.Application.Interfaces.Services
 {
     public interface IUserService
     {
-        Task<UserEntityDto> Get(int id);
-        Task<IEnumerable<UserEntityDto>> GetAll();
-        Task<UserEntityDto> Register(UserEntityDto user);
-        Task<UserEntityLoginDto> Login(UserEntityDto user);
+        Task<UserRegisterResponseDto> Register(UserRegisterRequestDto user);
+        Task<UserLoginResponseDto> Login(UserLoginRequestDto user);
     }
 }

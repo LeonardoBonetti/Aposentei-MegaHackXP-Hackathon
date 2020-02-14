@@ -6,6 +6,7 @@ using Hackaton.Application.DTO;
 using Hackaton.Domain.Entities;
 using Hackaton.Domain.Interfaces;
 using Hackaton.Application.Interfaces.Services;
+using Hackaton.Application.Validators;
 
 namespace Hackaton.Infra.Data.Repository
 {
@@ -20,40 +21,99 @@ namespace Hackaton.Infra.Data.Repository
             _mapper = mapper;
         }
 
-        public async Task<UserEntityLoginDto> Login(UserEntityDto user)
+        public async Task<UserLoginResponseDto> Login(UserLoginRequestDto login)
         {
-            var result = await _repository.LoginAsync(_mapper.Map<UserEntity>(user));
-            if (result)
+
+            try
             {
-                return new UserEntityLoginDto()
+
+                var validate = new UserLoginValidator().Validate(login);
+
+                if (!validate.IsValid)
                 {
-                    Sucess = true,
-                    Message = "Login realizado com sucesso"
-                };
+                    return new UserLoginResponseDto()
+                    {
+                        Sucess = false,
+                        Message = validate.Errors[0].ErrorMessage
+                    };
+                }
+
+                var result = _mapper.Map<UserEntityDto>((await _repository.LoginAsync(_mapper.Map<UserEntity>(login))));
+
+                if (result != null)
+                {
+                    return new UserLoginResponseDto()
+                    {
+                        Sucess = true,
+                        Message = "Login realizado com sucesso",
+                        User = result
+                    };
+                }
+                else
+                {
+                    return new UserLoginResponseDto()
+                    {
+                        Sucess = false,
+                        Message = "Usuário ou senha incorreto"
+                    };
+                }
+
             }
-            else
+            catch (Exception e)
             {
-                return new UserEntityLoginDto()
+                return new UserLoginResponseDto()
                 {
                     Sucess = false,
-                    Message = "Usuário ou senha incorreto"
+                    Message = "Ocorreu um erro, tente novamente"
+                };
+            }
+
+        }
+        public async Task<UserRegisterResponseDto> Register(UserRegisterRequestDto register)
+        {
+            try
+            {
+                var validate = new UserRegisterValidator().Validate(register);
+
+                if (!validate.IsValid)
+                {
+                    return new UserRegisterResponseDto()
+                    {
+                        Sucess = false,
+                        Message = validate.Errors[0].ErrorMessage
+                    };
+                }
+
+                var userExists = await _repository.UserExists(register.Email);
+
+                if (userExists)
+                {
+                    return new UserRegisterResponseDto()
+                    {
+                        Sucess = false,
+                        Message = "Usuário já existe, tente outro email"
+                    };
+                }
+                else
+                {
+                    var result = _mapper.Map<UserEntityDto>(await _repository.InsertAsync(_mapper.Map<UserEntity>(register)));
+
+                    return new UserRegisterResponseDto()
+                    {
+                        Sucess = true,
+                        Message = "Usuário cadastrado com sucesso",
+                        User = result
+                    };
+                }
+            }
+            catch (Exception e)
+            {
+                return new UserRegisterResponseDto()
+                {
+                    Sucess = false,
+                    Message = "Ocorreu um erro, tente novamente"
                 };
             }
         }
-        public async Task<UserEntityDto> Register(UserEntityDto user)
-        {
-            return _mapper.Map<UserEntityDto>((await _repository.InsertAsync(_mapper.Map<UserEntity>(user))));
-        }
-        public async Task<UserEntityDto> Get(int id)
-        {
-            var dbResponse = await _repository.SelectAsync(id);
-            return _mapper.Map<UserEntityDto>(dbResponse);
-        }
-        public async Task<IEnumerable<UserEntityDto>> GetAll()
-        {
-            var dbResponse = await _repository.SelectAsync();
-            return _mapper.Map<IEnumerable<UserEntityDto>>(dbResponse);
-        }
-
     }
 }

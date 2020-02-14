@@ -12,6 +12,8 @@ namespace Hackaton.Application.AutoMapper
         public DTOToDomainMapProfile()
         {
             CreateMap<UserEntityDto, UserEntity>();
+            CreateMap<UserLoginRequestDto, UserEntity>();
+            CreateMap<UserRegisterRequestDto, UserEntity>();
         }
     }
 }

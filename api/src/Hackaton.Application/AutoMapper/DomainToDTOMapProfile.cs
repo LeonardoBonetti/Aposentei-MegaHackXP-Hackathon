@@ -12,6 +12,7 @@ namespace Hackaton.Application.AutoMapper
         public DomainToDTOMapProfile()
         {
             CreateMap<UserEntity, UserEntityDto>();
+
         }
     }
 }

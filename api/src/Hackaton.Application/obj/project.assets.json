@@ -15,6 +15,18 @@
           "lib/netstandard2.0/AutoMapper.dll": {}
         }
       },
+      "FluentValidation/8.6.1": {
+        "type": "package",
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.4.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.5.0": {
         "type": "package",
         "compile": {
@@ -879,6 +891,25 @@
         "lib/netstandard2.0/AutoMapper.dll",
         "lib/netstandard2.0/AutoMapper.pdb",
         "lib/netstandard2.0/AutoMapper.xml"
+      ]
+    },
+    "FluentValidation/8.6.1": {
+      "sha512": "QQO2GfAlxgWHmXf7p4vruMRqu0cpkLuZnqB9qbO+q4NFCseeYOG0uOjGoNE6DUvMukv2G0P4zLRcGglXhEDWkA==",
+      "type": "package",
+      "path": "fluentvalidation/8.6.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluentvalidation.8.6.1.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net45/FluentValidation.dll",
+        "lib/net45/FluentValidation.xml",
+        "lib/netstandard1.1/FluentValidation.dll",
+        "lib/netstandard1.1/FluentValidation.xml",
+        "lib/netstandard1.6/FluentValidation.dll",
+        "lib/netstandard1.6/FluentValidation.xml",
+        "lib/netstandard2.0/FluentValidation.dll",
+        "lib/netstandard2.0/FluentValidation.xml"
       ]
     },
     "Microsoft.CSharp/4.5.0": {
@@ -3297,6 +3328,7 @@
       "AutoMapper >= 9.0.0",
       "Data >= 1.0.0",
       "Domain >= 1.0.0",
+      "FluentValidation >= 8.6.1",
       "Microsoft.NETCore.App >= 2.1.0"
     ]
   },
@@ -3351,6 +3383,10 @@
           "AutoMapper": {
             "target": "Package",
             "version": "[9.0.0, )"
+          },
+          "FluentValidation": {
+            "target": "Package",
+            "version": "[8.6.1, )"
           },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
