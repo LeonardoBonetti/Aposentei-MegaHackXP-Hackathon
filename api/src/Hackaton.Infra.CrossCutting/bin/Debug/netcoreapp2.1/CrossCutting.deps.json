@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "88aaa261dd23c805b178224d5b8e52b12c02c212"
+    "signature": "08c8ecdb89adfe2ff5a65417abc99b881bf06925"
   },
   "compilationOptions": {},
   "targets": {
@@ -38,6 +38,17 @@
           "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
             "assemblyVersion": "0.0.0.0",
             "fileVersion": "6.1.0.0"
+          }
+        }
+      },
+      "FluentValidation/8.6.1": {
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.6.1.0"
           }
         }
       },
@@ -459,7 +470,8 @@
         "dependencies": {
           "AutoMapper": "9.0.0",
           "Data": "1.0.0",
-          "Domain": "1.0.0"
+          "Domain": "1.0.0",
+          "FluentValidation": "8.6.1"
         },
         "runtime": {
           "Application.dll": {}
@@ -501,6 +513,13 @@
       "sha512": "sha512-KjuQqNFqE0GXCaV10GBlqE5thqgMz0hgzcLidCRBq+nEo9KiFspsRWOsRrk4sQKM3UQqOYRIKfFFO3XBnUo4Yg==",
       "path": "automapper.extensions.microsoft.dependencyinjection/6.1.0",
       "hashPath": "automapper.extensions.microsoft.dependencyinjection.6.1.0.nupkg.sha512"
+    },
+    "FluentValidation/8.6.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QQO2GfAlxgWHmXf7p4vruMRqu0cpkLuZnqB9qbO+q4NFCseeYOG0uOjGoNE6DUvMukv2G0P4zLRcGglXhEDWkA==",
+      "path": "fluentvalidation/8.6.1",
+      "hashPath": "fluentvalidation.8.6.1.nupkg.sha512"
     },
     "Microsoft.CSharp/4.5.0": {
       "type": "package",

@@ -19,17 +19,22 @@ namespace Hackaton.Infra.Data.Repository
             _dataset = _context.Set<UserEntity>();
         }
 
-        public async Task<bool> LoginAsync(UserEntity user)
+        public async Task<UserEntity> LoginAsync(UserEntity user)
         {
             try
             {
                 var result = await _dataset.SingleOrDefaultAsync(p => p.Email.Equals(user.Email) && p.Password.Equals(user.Password));
-                return result != null ? true : false;
+                return result;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+        }
+
+        public async Task<bool> UserExists(string email)
+        {
+            return await _dataset.AnyAsync(p => p.Email.Equals(email));
         }
     }
 }

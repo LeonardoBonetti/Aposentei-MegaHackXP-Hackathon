@@ -19,35 +19,26 @@ namespace Hackaton.Api.Controllers
         }
 
         [HttpPost("Login")]
-        public async Task<ActionResult> Login([FromBody] UserEntityDto request)
+        public async Task<ActionResult> Login([FromBody] UserLoginRequestDto request)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
             try
             {
                 return Ok(await _userService.Login(request));
             }
-            catch (ArgumentException e)
+            catch (Exception e)
             {
                 return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
             }
         }
 
         [HttpPost("Register")]
-        public async Task<ActionResult> Register([FromBody] UserEntityDto request)
+        public async Task<ActionResult> Register([FromBody] UserRegisterRequestDto request)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
             try
             {
                 return Ok(await _userService.Register(request));
             }
-            catch (ArgumentException e)
+            catch (Exception e)
             {
                 return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
             }

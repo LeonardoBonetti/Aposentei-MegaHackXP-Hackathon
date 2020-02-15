@@ -1,6 +1,15 @@
 version: '3.1'
+
 services:
-  Mysql:
+
+  card-dock-base-api:
+    build: .
+    environment:
+      MYSQL_CONNECTION: 'Server=mysql18;Port=3306;Database=HackaDB;Uid=root;Pwd=admin'
+    ports:
+      - '8001:80'
+
+  mysql:
     image: mysql:8.0.16
     restart: always
     environment:

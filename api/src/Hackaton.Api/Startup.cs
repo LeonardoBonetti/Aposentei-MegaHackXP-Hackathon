@@ -10,6 +10,10 @@ using Hackaton.CrossCutting.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using Hackaton.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.AspNetCore.Swagger;
+using System.Reflection;
+using System.IO;
+using Microsoft.OpenApi.Models;
 
 namespace Api
 {
@@ -31,8 +35,13 @@ namespace Api
                 options => options.UseMySql("Server=localhost;Port=3306;Database=HackaDB;Uid=root;Pwd=admin")
             );
 
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "XPTO API", Version = "v1" });
+            });
+
             Bootstrapper.SetupIoC(services);
         }
 
@@ -45,6 +54,13 @@ namespace Api
             }
 
             app.UseMvc();
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "XPTO API V1");
+            });
+
         }
     }
 }
