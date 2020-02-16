@@ -10,5 +10,6 @@ namespace Hackaton.Application.Interfaces.Services
     {
         Task<UserRegisterResponseDto> Register(UserRegisterRequestDto user);
         Task<UserLoginResponseDto> Login(UserLoginRequestDto user);
+        Task<UserResponseDto> UpdateTrailUser(UpdateUserTrailRequestDto trail);
     }
 }

@@ -115,5 +115,17 @@ namespace Hackaton.Infra.Data.Repository
                 };
             }
         }
+
+        public async Task<UserResponseDto> UpdateTrailUser(UpdateUserTrailRequestDto trail)
+        {
+            var user = await _repository.SelectAsync(trail.UserID);
+            if(user == null)
+                throw new Exception("usuário não encontrado");
+
+            //Validação para verificar se trilha existe
+            user.TrailID = trail.TrailID;
+            var result = await _repository.UpdateAsync(user);
+            return _mapper.Map<UserResponseDto>(result);
+        }
     }
 }

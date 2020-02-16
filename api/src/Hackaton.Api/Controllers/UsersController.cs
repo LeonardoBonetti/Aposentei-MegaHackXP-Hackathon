@@ -43,5 +43,18 @@ namespace Hackaton.Api.Controllers
                 return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
             }
         }
+
+        [HttpPost("UpdateUserTrail")]
+        public async Task<ActionResult> UpdateTrailUser(UpdateUserTrailRequestDto trail)
+        {
+            try
+            {
+                return Ok(await _userService.UpdateTrailUser(trail));
+            }
+            catch (Exception e)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
+            }
+        }
     }
 }

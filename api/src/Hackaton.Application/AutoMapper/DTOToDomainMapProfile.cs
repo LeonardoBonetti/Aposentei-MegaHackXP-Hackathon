@@ -14,6 +14,7 @@ namespace Hackaton.Application.AutoMapper
             CreateMap<UserEntityDto, UserEntity>();
             CreateMap<UserLoginRequestDto, UserEntity>();
             CreateMap<UserRegisterRequestDto, UserEntity>();
+            CreateMap<UserResponseDto, UserEntity>();
         }
     }
 }
