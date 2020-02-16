@@ -24,12 +24,14 @@ namespace Hackaton.CrossCutting.DependencyInjection
         {
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ITrailService, TrailService>();
+            services.AddScoped<ITrailTypeService, TrailTypeService>();
         }
         private static void AddRepositories(this IServiceCollection services)
         {
             services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ITrailRepository, TrailRepository>();
+            services.AddScoped<ITrailTypeRepository, TrailTypeRepository>();
         }
     }
 }
