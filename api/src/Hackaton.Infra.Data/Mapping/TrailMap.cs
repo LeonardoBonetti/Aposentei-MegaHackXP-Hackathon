@@ -12,6 +12,7 @@ namespace Hackaton.Infra.Data.Mapping
             builder.ToTable("Trails");
             builder.HasKey(p => p.Id);
             builder.Property(c => c.Reward).IsRequired();
+            //Tirar de todas(exeto as que tem lista(resposta))
             builder.HasOne(e => e.Type).WithOne();
         }
     }
