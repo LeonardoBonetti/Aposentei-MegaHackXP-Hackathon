@@ -12,6 +12,7 @@ namespace Hackaton.Infra.Data.Mapping
             builder.ToTable("QuizAnswers");
             builder.HasKey(p => p.Id);
             builder.Property(c => c.Description).IsRequired();
+            //HasOneWithMany
             builder.HasOne(e => e.Quiz).WithOne();
         }
     }
