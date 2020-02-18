@@ -6,6 +6,6 @@ namespace Hackaton.Domain.Entities
 {
     public class TrailTypeEntity : BaseEntity
     {
-        public int Description { get; set; }
+        public string Description { get; set; }
     }
 }
