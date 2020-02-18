@@ -12,7 +12,9 @@ namespace Hackaton.Infra.Data.Mapping
             builder.ToTable("TextTrail");
             builder.HasKey(p => p.Id);
             builder.Property(c => c.Paragraphs).IsRequired();
-            builder.HasOne(e => e.Trail).WithOne();
+            builder.HasOne(x => x.Trail)
+                    .WithMany(g => g.TextTrailEntity)
+                    .HasForeignKey(s => s.TrailID);
         }
     }
 }

@@ -12,7 +12,9 @@ namespace Hackaton.Infra.Data.Mapping
             builder.ToTable("YoutubeTrail");
             builder.HasKey(p => p.Id);
             builder.Property(c => c.Url).IsRequired();
-            builder.HasOne(e => e.Trail).WithOne();
+            builder.HasOne(x => x.Trail)
+                    .WithMany(g => g.YoutubeTrailEntity)
+                    .HasForeignKey(s => s.TrailID);
         }
     }
 }

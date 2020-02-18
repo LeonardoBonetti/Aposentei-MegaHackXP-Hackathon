@@ -55,8 +55,7 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TrailID")
-                        .IsUnique();
+                    b.HasIndex("TrailID");
 
                     b.ToTable("QuizTrail");
                 });
@@ -77,8 +76,7 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TrailID")
-                        .IsUnique();
+                    b.HasIndex("TrailID");
 
                     b.ToTable("TextTrail");
                 });
@@ -100,8 +98,7 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TypeID")
-                        .IsUnique();
+                    b.HasIndex("TypeID");
 
                     b.ToTable("Trails");
                 });
@@ -113,7 +110,8 @@ namespace Data.Migrations
 
                     b.Property<DateTime?>("CreateAt");
 
-                    b.Property<int>("Description");
+                    b.Property<string>("Description")
+                        .IsRequired();
 
                     b.Property<DateTime?>("UpdateAt");
 
@@ -160,6 +158,8 @@ namespace Data.Migrations
 
                     b.Property<DateTime?>("CreateAt");
 
+                    b.Property<string>("Paragraphs");
+
                     b.Property<int>("TrailID");
 
                     b.Property<DateTime?>("UpdateAt");
@@ -169,8 +169,7 @@ namespace Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TrailID")
-                        .IsUnique();
+                    b.HasIndex("TrailID");
 
                     b.ToTable("YoutubeTrail");
                 });
@@ -186,32 +185,32 @@ namespace Data.Migrations
             modelBuilder.Entity("Hackaton.Domain.Entities.QuizTrailEntity", b =>
                 {
                     b.HasOne("Hackaton.Domain.Entities.TrailEntity", "Trail")
-                        .WithOne()
-                        .HasForeignKey("Hackaton.Domain.Entities.QuizTrailEntity", "TrailID")
+                        .WithMany("QuizTrailEntity")
+                        .HasForeignKey("TrailID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Hackaton.Domain.Entities.TextTrailEntity", b =>
                 {
                     b.HasOne("Hackaton.Domain.Entities.TrailEntity", "Trail")
-                        .WithOne()
-                        .HasForeignKey("Hackaton.Domain.Entities.TextTrailEntity", "TrailID")
+                        .WithMany("TextTrailEntity")
+                        .HasForeignKey("TrailID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Hackaton.Domain.Entities.TrailEntity", b =>
                 {
-                    b.HasOne("Hackaton.Domain.Entities.TrailTypeEntity", "Type")
-                        .WithOne()
-                        .HasForeignKey("Hackaton.Domain.Entities.TrailEntity", "TypeID")
+                    b.HasOne("Hackaton.Domain.Entities.TrailTypeEntity", "TrailTypeEntity")
+                        .WithMany("TrailEntity")
+                        .HasForeignKey("TypeID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Hackaton.Domain.Entities.YoutubeTrailEntity", b =>
                 {
                     b.HasOne("Hackaton.Domain.Entities.TrailEntity", "Trail")
-                        .WithOne()
-                        .HasForeignKey("Hackaton.Domain.Entities.YoutubeTrailEntity", "TrailID")
+                        .WithMany("YoutubeTrailEntity")
+                        .HasForeignKey("TrailID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

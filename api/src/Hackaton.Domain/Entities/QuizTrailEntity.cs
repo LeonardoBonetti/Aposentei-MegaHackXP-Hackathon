@@ -10,9 +10,9 @@ namespace Hackaton.Domain.Entities
         public string Description { get; set; }
         public int TrailID { get; set; }
 
-        [ForeignKey("TrailID")]
-        public List<TrailEntity> Trail { get; set; }
-        public List<QuizAnswersEntity> Answers { get; set; }
+        //[ForeignKey("TrailID")]
+        public TrailEntity Trail { get; set; }
+        public ICollection<QuizAnswersEntity> Answers { get; set; }
 
     }
 }

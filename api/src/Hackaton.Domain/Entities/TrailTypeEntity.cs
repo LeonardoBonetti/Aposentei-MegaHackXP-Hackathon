@@ -7,5 +7,6 @@ namespace Hackaton.Domain.Entities
     public class TrailTypeEntity : BaseEntity
     {
         public string Description { get; set; }
+        public ICollection<TrailEntity> TrailEntity { get; set; }
     }
 }

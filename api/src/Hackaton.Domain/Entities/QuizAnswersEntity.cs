@@ -10,7 +10,7 @@ namespace Hackaton.Domain.Entities
         public Boolean Correclty { get; set; }
         public int QuizID { get; set; }
 
-        [ForeignKey("QuizID")]
+        //[ForeignKey("QuizID")]
         public QuizTrailEntity Quiz { get; set; }
 
     }

@@ -42,7 +42,7 @@ namespace Hackaton.Infra.Data.Repository
         {
             var result = await _repository.SelectAsync(ID);
             var dto = _mapper.Map<TrailResponseDto>(result);
-            dto.TrailTypeDto = await _trailTypeService.GetByID(result.TypeID);
+            // dto.TrailTypeDto = await _trailTypeService.GetByID(result.TypeID);
             return dto;
         }
     }

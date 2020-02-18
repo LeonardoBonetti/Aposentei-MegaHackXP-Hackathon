@@ -9,7 +9,7 @@ namespace Hackaton.Domain.Entities
         public string Paragraphs { get; set; }
         public int TrailID { get; set; }
 
-        [ForeignKey("TrailID")]
+        //[ForeignKey("TrailID")]
         public TrailEntity Trail { get; set; }
 
     }
