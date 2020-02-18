@@ -1,7 +1,7 @@
 import React, { useState, useEffect, } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, ScrollView } from 'react-native';
 import { WebView } from 'react-native-webview';
-import { GetUserSettings,SetUserSettings } from '../Services/UserController';
+import { GetUserSettings, SetUserSettings } from '../Services/UserController';
 import { simpleAlertCallback } from '../utils/Alerts';
 import DefaultButton from '../components/DefaultButton';
 
@@ -10,7 +10,7 @@ export default function CheckpointVideo({ route, navigation }) {
 
   navigation.setOptions({ headerTitle: 'Video' });
 
-  const [videoState, setvideoState] = useState({paragraphs:[]});
+  const [videoState, setvideoState] = useState({ paragraphs: [] });
   const [user, setUser] = useState({});
 
   useEffect(() => {
@@ -44,16 +44,16 @@ export default function CheckpointVideo({ route, navigation }) {
     // scroll.
   };
 
-  async function handleCompleteTrail()
-  {  
+  async function handleCompleteTrail() {
     var _user = user;
     user.coins += videoState.reward;
     user.trailID += 1;
     setUser(_user);
     await SetUserSettings(_user);
 
-    simpleAlertCallback('Muito bom', 'Parabéns, você adquiriu mais conhecimento rumo a sua independência financeira', () => {navigation.push('RoadMap')});
+    simpleAlertCallback('Muito bom', 'Parabéns, você adquiriu mais conhecimento rumo a sua independência financeira', () => { navigation.navigate('Root') });
   }
+
 
   return (
     <View style={styles.container}>
@@ -70,12 +70,12 @@ export default function CheckpointVideo({ route, navigation }) {
         <View style={styles.textContent}>
           <Text style={styles.title}>{videoState.title}</Text>
           {
-              videoState.paragraphs.map(p => (
-                <Text style={styles.paragraph}>{p}</Text>
-              ))
+            videoState.paragraphs.map(p => (
+              <Text style={styles.paragraph}>{p}</Text>
+            ))
           }
         </View>
-        <DefaultButton enabled={user.trailID <= videoState.trailID} onClick={handleCompleteTrail} text={"Marcar como visto"}/>
+        <DefaultButton enabled={user.trailID <= videoState.trailID} onClick={handleCompleteTrail} text={"Marcar como visto"} />
       </ScrollView>
     </View>
 
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     padding: 15,
     marginTop: 10,
     backgroundColor: '#4d0250',
-    
+
     marginBottom: 10,
     borderRadius: 3
   },

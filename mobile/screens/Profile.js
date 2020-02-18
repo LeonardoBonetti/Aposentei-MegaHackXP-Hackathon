@@ -10,17 +10,16 @@ export default function Profile() {
   function setscrollView(scroll) {
     // scroll.
   };
-  
+
   return (
     <View style={styles.container}>
-    <ScrollView
-      ref={(scroll) => { setscrollView(scroll) }}
-      style={[styles.scrollView, { Height: "auto"}]}
-      contentContainerStyle={styles.scrollViewContainer}
-    >          
-      
-    </ScrollView>
-  </View>
+      <ScrollView
+        ref={(scroll) => { setscrollView(scroll) }}
+        style={[styles.scrollView, { Height: "auto" }]}
+        contentContainerStyle={styles.scrollViewContainer}
+      >
+      </ScrollView>
+    </View>
   );
 }
 
@@ -30,7 +29,7 @@ Profile.navigationOptions = {
 
 
 const styles = StyleSheet.create({
-   container: {
+  container: {
     flex: 1,
     alignItems: 'center',
     backgroundColor: '#f6f7eb'

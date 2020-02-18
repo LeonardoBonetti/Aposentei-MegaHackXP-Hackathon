@@ -1,50 +1,44 @@
 import React, { useState, useEffect } from 'react';
-import {StyleSheet, View, ScrollView,Text} from 'react-native';
+import { StyleSheet, View, ScrollView, Text } from 'react-native';
 import Checkpoint from '../components/Checkpoint';
 import UserHeader from '../components/UserHeader';
 import { GetUserSettings, SetUserSettings } from '../Services/UserController';
+import Api from '../Services/Api';
 
 export default function RoadMap({ navigation }) {
 
-  const [checkPoints, setcheckPoints] = useState([
-    {
-      id: 1,
-      title: 'Rumo a Dependência financeira !',
-      description: 'Bem vindo, conheço nosso propósito.',
-      trailTypeDto : {
-        description: 'text',
-        id: 1
-      }
-    },
-    {
-      id: 2,
-      title: 'Como conquistar a independência financeira ',
-      description: 'Ter um patrimônio que gere rendimentos suficientes para cobrir todos os seus gastos.',
-      trailTypeDto : {
-        description: 'video',
-        id: 2
-      }
-    },
-    {
-      id: 3,
-      title: 'Pratique',
-      description: 'Teste os seus conhecimentos !',
-      trailTypeDto : {
-        description: 'quiz',
-        id: 3
-      }
-    },
-  ]);
+  navigation.setOptions({ headerTitle: 'Aprenda' });
+
+  const [checkPoints, setcheckPoints] = useState([]);
 
   const [user, setUser] = useState({});
 
-    useEffect(() => {
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
       async function setUserAsync() {
         var user = await GetUserSettings();
         setUser(user);
       };
       setUserAsync();
-    }, []);
+    });
+    return unsubscribe;
+  }, [navigation]);
+
+  useEffect(() => {
+    async function getTrails() {
+      const response = await Api.get(`/Roadmap`)
+        .then(function (response) {
+          console.log(response);
+        }.bind(this))
+        .catch(function (error) {
+          console.log(error);
+        }.bind(this))
+        .finally(function () {
+        }.bind(this));
+    };
+
+    getTrails();
+  }, []);
 
   async function handleOnCheckpointClick(trailID, type) {
 
@@ -62,23 +56,18 @@ export default function RoadMap({ navigation }) {
         break;
       default:
         return;
-    }    
-    navigation.push('Checkpoint'+path, { trailID: trailID })
+    }
+    navigation.navigate('Checkpoint' + path, { trailID: trailID })
   }
 
-  function setscrollView(scroll) {
-    // scroll.
-  };
-  
   return (
     <View style={styles.container}>
-      
-     <UserHeader coins={user.coins} trailID={user.trailID}/>
+
+      <UserHeader coins={user.coins} trailID={user.trailID} />
       <ScrollView
-        ref={(scroll) => { setscrollView(scroll) }}
-        style={[styles.scrollView, { Height: "auto"}]}
+        style={[styles.scrollView, { Height: "auto" }]}
         contentContainerStylgetParame={styles.scrollViewContainer}
-      >          
+      >
         {
           checkPoints.map(rm =>
             (

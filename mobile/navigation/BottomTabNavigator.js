@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Image} from 'react-native';
+import { Image } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import RoadMap from '../screens/RoadMap';
 import Store from '../screens/Store';
@@ -9,7 +9,7 @@ const BottomTab = createBottomTabNavigator();
 const INITIAL_ROUTE_NAME = 'RoadMap';
 
 export default function BottomTabNavigator({ navigation, route }) {
-  
+
   navigation.setOptions({ headerTitle: getHeaderTitle(route) });
 
   return (
@@ -19,15 +19,15 @@ export default function BottomTabNavigator({ navigation, route }) {
         component={RoadMap}
         options={{
           title: 'Aprenda',
-          tabBarIcon: ({ focused }) => <Image style={{width: 30, height: 30}} source={require('../assets/icons/aprender.png')}/> ,
+          tabBarIcon: ({ focused }) => <Image style={{ width: 30, height: 30 }} source={require('../assets/icons/aprender.png')} />,
         }}
       />
-       <BottomTab.Screen
+      <BottomTab.Screen
         name="Store"
         component={Store}
         options={{
           title: 'Loja',
-          tabBarIcon: ({ focused }) => <Image style={{width: 30, height: 30}} source={require('../assets/icons/loja.png')}/>,
+          tabBarIcon: ({ focused }) => <Image style={{ width: 30, height: 30 }} source={require('../assets/icons/loja.png')} />,
         }}
       />
       <BottomTab.Screen
@@ -35,7 +35,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         component={Profile}
         options={{
           title: 'Perfil',
-          tabBarIcon: ({ focused }) => <Image style={{width: 30, height: 30}} source={require('../assets/icons/perfil.png')}/>,
+          tabBarIcon: ({ focused }) => <Image style={{ width: 30, height: 30 }} source={require('../assets/icons/perfil.png')} />,
         }}
       />
     </BottomTab.Navigator>
@@ -51,6 +51,5 @@ function getHeaderTitle(route) {
       return 'Troque suas moedas';
     case 'Profile':
       return 'Visualize seu perfil';
-    
   }
 }

@@ -16,7 +16,7 @@
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#4d0250"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -29,7 +29,10 @@
     },
     "android": {
       "package": "com.xpto.aposentei",
-      "versionCode": 1
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "backgroundColor": "#4d0250"
+      }
     }
   }
 }

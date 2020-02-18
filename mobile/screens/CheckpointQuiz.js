@@ -1,13 +1,13 @@
 import React, { useState, useEffect, } from 'react';
 import { StyleSheet, View, ScrollView } from 'react-native';
 import { GetUserSettings, SetUserSettings } from '../Services/UserController';
-import { simpleAlert,simpleAlertCallback } from '../utils/Alerts';
+import { simpleAlert, simpleAlertCallback } from '../utils/Alerts';
 import QuizComponent from '../components/QuizComponent';
 import DefaultButton from '../components/DefaultButton';
 
 export default function CheckpointQuiz({ route, navigation }) {
 
-  navigation.setOptions({ headerTitle: 'Teste seus conhecimentos'});
+  navigation.setOptions({ headerTitle: 'Teste seus conhecimentos' });
 
 
   const [quizState, setQUizState] = useState('waiting'); //waiting / result
@@ -148,7 +148,7 @@ export default function CheckpointQuiz({ route, navigation }) {
         ]
       };
       setQuiz(quiz);
-  };
+    };
     getQuizData();
   }, []);
 
@@ -158,23 +158,20 @@ export default function CheckpointQuiz({ route, navigation }) {
     if (quizAnswers.length < quiz.questions.length) {
       simpleAlert('Ainda restam perguntas...', 'Responda todas as perguntas antes de continuar.');
     }
-    else 
-    {
+    else {
       var correcltyAnswers = quizAnswers.filter(q => q.correclty == true).length;
-      
-      if(correcltyAnswers >= Math.ceil(quizAnswers.length * 0.7))
-      {
-          var _user = user;
-          user.coins += quiz.reward + (correcltyAnswers * 2);
-          user.trailID += 1;
-          setUser(_user);
-          await SetUserSettings(_user);
-    
-          simpleAlertCallback('Muito bom', `Você acertou ${correcltyAnswers} perguntas e passou para a próxima etapa !`, () => {navigation.push('RoadMap')});
+
+      if (correcltyAnswers >= Math.ceil(quizAnswers.length * 0.7)) {
+        var _user = user;
+        user.coins += quiz.reward + (correcltyAnswers * 2);
+        user.trailID += 1;
+        setUser(_user);
+        await SetUserSettings(_user);
+
+        simpleAlertCallback('Muito bom', `Você acertou ${correcltyAnswers} perguntas e passou para a próxima etapa !`, () => { navigation.navigate('Root') });
       }
-      else
-      {
-        simpleAlertCallback('Faltou só um pouco :/', 'Você precisa acertar pelo menos 70% das perguntas, estude mais um pouco e tente novamente', () => {navigation.push('RoadMap')});
+      else {
+        simpleAlertCallback('Faltou só um pouco :/', 'Você precisa acertar pelo menos 70% das perguntas, estude mais um pouco e tente novamente', () => { navigation.navigate('Root') });
       }
 
 
@@ -204,7 +201,7 @@ export default function CheckpointQuiz({ route, navigation }) {
         </View>
       </TouchableOpacity> */}
 
-      <DefaultButton enabled={user.trailID <= quiz.trailID} onClick={handleSendQuiz} text={"Enviar"}/>
+      <DefaultButton enabled={user.trailID <= quiz.trailID} onClick={handleSendQuiz} text={"Enviar"} />
 
     </View>
   );

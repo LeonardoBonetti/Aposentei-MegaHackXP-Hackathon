@@ -50,31 +50,33 @@ export default function App(props) {
   var screenOptions = {
     headerStyle: {
       backgroundColor: '#4d0250',
-      borderBottomColor:'#ffba03',
+      borderBottomColor: '#ffba03',
       borderBottomWidth: 3
     },
     headerTitleStyle: {
-      color:'#ffba03'
+      color: '#ffba03'
     }
   };
 
   if (!isLoadingComplete && !props.skipLoadingScreen) {
     return null;
   } else {
-    return (  
-        <View style={styles.container}>
-          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-          <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
-            <Stack.Navigator>
-              <Stack.Screen options={screenOptions} name="Root" component={BottomTabNavigator} />
-              <Stack.Screen options={screenOptions} name="CheckpointQuiz" component={CheckpointQuiz} />
-              <Stack.Screen options={screenOptions} name="CheckpointText" component={CheckpointText} />
-              <Stack.Screen options={screenOptions} name="CheckpointVideo" component={CheckpointVideo} />
-              <Stack.Screen options={screenOptions} name="RoadMap" component={RoadMap} />
+    return (
+      <View style={styles.container}>
+        {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+        <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
+          <Stack.Navigator>
+            <Stack.Screen options={screenOptions} name="Root" component={BottomTabNavigator} />
 
-            </Stack.Navigator>
-          </NavigationContainer>
-        </View>
+
+            <Stack.Screen options={screenOptions} name="CheckpointQuiz" component={CheckpointQuiz} />
+            <Stack.Screen options={screenOptions} name="CheckpointText" component={CheckpointText} />
+            <Stack.Screen options={screenOptions} name="CheckpointVideo" component={CheckpointVideo} />
+            {/* <Stack.Screen options={screenOptions} name="RoadMap" component={RoadMap} /> */}
+
+          </Stack.Navigator>
+        </NavigationContainer>
+      </View>
     );
   }
 }
