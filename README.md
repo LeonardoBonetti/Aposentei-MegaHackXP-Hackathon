@@ -24,4 +24,14 @@ Aceita o desafio da XP Inc, vamos juntos transformar nossa nação e permitir qu
 - JSON Server 
 - MySQL
 
-Link do APK: https://storage.googleapis.com/hackaton-xp/aposentei.apk
+
+Arquivo Pitch PDF: https://storage.googleapis.com/hackaton-xp/pitch%20vencedor%20aposentei.pdf
+
+Download Video apresentação: https://storage.googleapis.com/hackaton-xp/ApresentacaoVideo.mkv
+Ou Upload no youtube(não listado): https://www.youtube.com/watch?v=W2Zlu1feSLU&feature=youtu.be
+
+Download apk: https://storage.googleapis.com/hackaton-xp/aposentei.apk
+
+Project Hunt: https://www.producthunt.com/posts/aposentei
+
+
