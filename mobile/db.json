@@ -1,25 +1,358 @@
 {
-    "roadmap": [
+    "user": {
+        "email": "leonickgui@hackathon.xp",
+        "password": "123password",
+        "trailID": 1,
+        "coins": 0
+    },
+    "trails": [
         {
             "id": 1,
-            "title": "Rumo a Dependência financeira !",
-            "description": "Bem vindo, conheço nosso propósito.",
+            "title": "Independência financera",
+            "description": "O que é independência financeira ?",
             "typeID": 1,
             "typeDescription": "text"
         },
         {
-            "id": 1,
-            "title": "Rumo a Dependência financeira !",
-            "description": "Bem vindo, conheço nosso propósito.",
+            "id": 2,
+            "title": "Independência financera",
+            "description": "Gustavo Cerbasi fala um pouco mais sobre o que é independência financeira",
+            "typeID": 2,
+            "typeDescription": "video"
+        },
+        {
+            "id": 3,
+            "title": "Independência financera",
+            "description": "Teste seus aprendizados",
+            "typeID": 3,
+            "typeDescription": "quiz"
+        },
+        {
+            "id": 4,
+            "title": "Reserva de emergência",
+            "description": "Como criar uma reserva de emergência",
             "typeID": 1,
             "typeDescription": "text"
         },
         {
+            "id": 5,
+            "title": "Reserva de emergência",
+            "description": "Reserva de emergência segundo Gustavo Cerbasi",
+            "typeID": 2,
+            "typeDescription": "video"
+        },
+        {
+            "id": 6,
+            "title": "Reserva de emergência",
+            "description": "Teste seus aprendizados",
+            "typeID": 3,
+            "typeDescription": "quiz"
+        }
+    ],
+    "textTrail": [
+        {
             "id": 1,
-            "title": "Rumo a Dependência financeira !",
-            "description": "Bem vindo, conheço nosso propósito.",
-            "typeID": 1,
-            "typeDescription": "text"
+            "title": "Seja livre",
+            "reward": 10,
+            "paragraphs": "Imagine ser livre ao ponto de trabalhar e fazer o que você ama, imagine poder ajudar seus familiares e amigos, viajar para onde quiser ou até mesmo simplesmente descansar, sem precisar trabalhar de forma obrigatória.;Quando se conquista a liberdade financeira, você adquire o bem mais precioso de todos ser humano, O TEMPO. Atualmente tudo é muito corrido, não conseguimos tempo para sair com todos os amigos, um tempo para nossos familiares e até para nós mesmos. Agora imagine poder gerir seu tempo da forma como quiser sem precisar das satisfação a ninguém.;O caminho até esse estado financeiro não é fácil, mas com foco e disciplina você consegue, e nosso objetivo é que você consiga dizer de forma concisa 'Aposentei'. Você precisará abdicar de algumas coisas e começar a economizar dinheiro, acumulando patrimônio e deixando seu dinheiro trabalhar para você.;Você precisará adquirir hábitos saudáveis financeiramente afim de estar cada vez mais próximo do se objetivo financeiro, e o segredo para isso é: gastar bem, ganhar mais e investir melhor."
+        },
+        {
+            "id": 4,
+            "title": "Segurança em primeiro lugar",
+            "reward": 20,
+            "paragraphs": "A reserva de emergência, como o próprio nome indica, nada mais é do que aquele montante de dinheiro que precisamos ter à mão em um momento emergencial, como um acidente de carro, a perda de um emprego, alguma reforma inesperada em casa ou até mesmo um falecimento inesperado. Esse recurso guardado é o que garante que a pessoa terá segurança e tranquilidade para quitar seus débitos sem grandes perdas de padrão de vida em momentos de maior dificuldade.;O tamanho da sua reserva de emergência vai depender muito de pessoa para pessoa e de seu padrão de vida. Na média, a conta básica é de seis meses de despesas cobertas por esse montante. Então, caso uma pessoa tenha despesas médias na casa de R$ 5 mil por mês, isso significaria um total de R$ 30 mil na reserva de emergência, já alguém com despesas de R$ 10 mil mensais precisaria de R$ 60 mil guardados.;Porém, esse é apenas um arredondamento e varia bastante em cada caso. Funcionários públicos que contam com estabilidade maior no emprego, por exemplo, podem ter uma reserva menor, na casa de 3 a 4 meses de despesas pagas. Já profissionais autônomos, como médicos ou dentistas, podem precisar de uma reserva maior, de 9 a 12 meses, uma vez que não contam com benefícios de empregados no regime CLT, como o FGTS, ou o aviso prévio.;No caso de uma reserva, o mais indicado é que você procure por investimentos com baixo risco e maior liquidez. Ou seja, que permitam que você tenha uma maior facilidade e velocidade de resgatar o dinheiro investido, as aplicações recomendadas para reserva são: CDB, LCA e LCI com liquidez diária."
+        }
+    ],
+    "youtubeTrail": [
+        {
+            "id": 2,
+            "title": "Independência financeira com Gustavo Cebarsi",
+            "reward": 10,
+            "paragraphs": "Todos deveriamos poupar dinheiro para no futuro manter nossa vida, ou parte dela, com os rendimentos de nosso esforço de poupança. E para que todos façam isso, precisamos desenvolver mais educação financeira, só que independência financeira é um conceito que poucos conhecem, é viver do fruto de seus investimentos de seu patrimônio. Para alguns significa deixar de trabalhar ou se aposentar, mas a independência financeira é muito mais do que isso, significa LIBERDADE.;Enquanto gustavo construia sua independencia financeira, seu objetivo era um dia deixar de trabalhar, ele trabalhava muito, horas e horas corrigindo prova e preparando aulas e queria juntar dinheiro para um dia viver dos rendimentos desse dinheiro, e deixar de dar aquele trabalho que era extenuante para ele. Quando ele conquistou essa independência financeira ainda jovem, percebeu o poder que tinha adquirido. Com ela, ele pode dizer não aos trabalhos que não gostava e passou a aceitar somente projetos que significavam muito para eles, trabalhand com paixão.;Seu desempenho cresceu, veio os prêmios e convites para trabalhar mais, hoje ele trabalha mais do que quando se sacrificava para poupar, mas faz com gosto e paixão e não tem planos de um dia deixar de faze-lo. Isso é independência financeira, é ter liberdade  de fazer o que você gosta, talvez até ganhando com isso e com a segurança de não perder essa liberdade no futuro.",
+            "url": "https://storage.googleapis.com/hackaton-xp/Independ%C3%AAncia%20Financeira%20%C3%A9%20mais%20do%20que%20poupar.mp4"
+        },
+        {
+            "id": 5,
+            "title": "Saiba como fazer sua reserva de emergência",
+            "reward": 20,
+            "paragraphs": "Os três P's da reserva de emergência em momentos de crise;1º P – Provisão: Provisão significa liquidez. É aquele dinheiro que você pode contar independentemente de estar trabalhando. Mais: é aquela grana que você pode sacar rapidamente, quando uma situação inesperada ocorrer. Comentei em meu blog sobre os cuidados que você deve ter com a liquidez em seus investimentos e reforço o coro aqui. Entre guardar dinheiro em banco e guardar dinheiro em corretoras de valores, prefira o primeiro, onde você pode alocá-lo em investimentos mais conservadores e de alta liquidez, como cadernetas de poupança, CDBs e fundos referenciados DI com crédito em D+0.;2º P – Proteção:O segundo “P” funciona como um escudo para te defender em situações de risco. Mas não é só um escudo puramente defensivo. Ele também tem sua função de ataque. Pense numa crise na macroeconomia que faz desvalorizar os ativos cotados em Bolsa, como Fundos de Investimento Imobiliários (FII) e ações. Não há problema em você retirar parcela do dinheiro da reserva de emergência para aumentar sua posição em ações desde que, é claro, as ações e os FIIs estejam sub-valorizados e você recomponha posteriormente seu colchão de segurança.;3º P – Potencialização:Potencialização do quê? De sua posição de credor. Embora essa função se confunda um pouco com a mencionada acima, quando tratamos da compra de ativos em Bolsa em momentos de crise, e sobre a qual inclusive já comentei em outro artigo, vale ressaltar que não é só em momentos de crise que é possível aproveitar as oportunidades.;A compra de ativos reais com o uso de um bom dinheiro alocado em reserva de emergência também é possível no mundo “real”, ou seja, fora da Bolsa. Por exemplo, você pode comprar um imóvel usando parcela do dinheiro acumulado nessa reserva de emergência. Ou então iniciar um negócio próprio com esse mesmo capital.;Conclusão: Seja qual for sua situação financeira atual, ter um suporte financeiro estável é um dos ingredientes fundamentais para ter uma vida com mais liberdade. Essa reserva de emergência é a chave que você precisa para ter tranquilidade, conforto e coragem para se aventurar em novos e empolgantes desafios que lhe aparecerem à sua frente.",
+            "url": "https://storage.googleapis.com/hackaton-xp/Reserva%20de%20emerg%C3%AAncia_%20saiba%20como%20fazer%20a%20sua%20-%20Gustavo%20Cerbasi.mp4"
+        }
+    ],
+    "quizTrail": [
+        {
+            "id": 3,
+            "title": "Teste seus conhecimentos",
+            "reward": 150,
+            "questions": [
+                {
+                    "description": "O que é independência financeira ?",
+                    "id": 1,
+                    "answers": [
+                        {
+                            "description": "Ter dinheiro para pagar suas contas",
+                            "correctly": false,
+                            "id": 1
+                        },
+                        {
+                            "description": "Ter 100 mil reais",
+                            "correctly": false,
+                            "id": 2
+                        },
+                        {
+                            "description": "Construir um patrimônio e com seus rendimentos ser livre para escolher o que quer fazer",
+                            "correctly": true,
+                            "id": 3
+                        },
+                        {
+                            "description": "Ganhar mais de 10 mil reais por mês",
+                            "correctly": false,
+                            "id": 4
+                        }
+                    ]
+                },
+                {
+                    "description": "Em quanto tempo é possível adquirir a independência financeira",
+                    "id": 2,
+                    "answers": [
+                        {
+                            "description": "1 ano",
+                            "correctly": false,
+                            "id": 5
+                        },
+                        {
+                            "description": "3 anos",
+                            "correctly": false,
+                            "id": 6
+                        },
+                        {
+                            "description": "mais de 10 anos",
+                            "correctly": false,
+                            "id": 7
+                        },
+                        {
+                            "description": "Depende da sua disciplina e dedicação",
+                            "correctly": true,
+                            "id": 8
+                        }
+                    ]
+                },
+                {
+                    "description": "Qual o segredo para o sucesso financeiro",
+                    "id": 3,
+                    "answers": [
+                        {
+                            "description": "Gastar bem",
+                            "correctly": false,
+                            "id": 9
+                        },
+                        {
+                            "description": "Ganhar mais",
+                            "correctly": false,
+                            "id": 10
+                        },
+                        {
+                            "description": "Investir melhor",
+                            "correctly": false,
+                            "id": 11
+                        },
+                        {
+                            "description": "Todas as alternativas anteriores",
+                            "correctly": true,
+                            "id": 12
+                        }
+                    ]
+                },
+                {
+                    "description": "Após adquirir a independência financeira, Gustavo...",
+                    "id": 4,
+                    "answers": [
+                        {
+                            "description": "Começou a trabalhar com o que amava e ganhou mais dinheiro",
+                            "correctly": true,
+                            "id": 13
+                        },
+                        {
+                            "description": "Continuou trabalhando com o que não queria",
+                            "correctly": false,
+                            "id": 14
+                        },
+                        {
+                            "description": "Comprou uma BMW",
+                            "correctly": false,
+                            "id": 15
+                        },
+                        {
+                            "description": "Gastou todo o dinheiro",
+                            "correctly": false,
+                            "id": 16
+                        }
+                    ]
+                },
+                {
+                    "description": "Quantos R$ é necessário para adquirir a independência financeira ?",
+                    "id": 5,
+                    "answers": [
+                        {
+                            "description": "Depende do seu estilo de vida",
+                            "correctly": true,
+                            "id": 17
+                        },
+                        {
+                            "description": "100 mil reais",
+                            "correctly": false,
+                            "id": 18
+                        },
+                        {
+                            "description": "300 mil reais",
+                            "correctly": false,
+                            "id": 19
+                        },
+                        {
+                            "description": "1 bilhão de reais",
+                            "correctly": false,
+                            "id": 20
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "title": "Teste seus conhecimentos",
+            "reward": 200,
+            "questions": [
+                {
+                    "description": "O que é reserva de emergência ?",
+                    "id": 6,
+                    "answers": [
+                        {
+                            "description": "Dinheiro para comprar roupas no natal",
+                            "correctly": false,
+                            "id": 21
+                        },
+                        {
+                            "description": "Dinheiro para guardar debaixo do colchão",
+                            "correctly": false,
+                            "id": 22
+                        },
+                        {
+                            "description": "100 mil reais investido na bolsa de valores",
+                            "correctly": false,
+                            "id": 23
+                        },
+                        {
+                            "description": "Dinheiro investido em aplicações seguras para futuras emergências",
+                            "correctly": true,
+                            "id": 24
+                        }
+                    ]
+                },
+                {
+                    "description": "Quantos meses do seu custo de vida você deve ter para uma boa reserva de emergência?",
+                    "id": 7,
+                    "answers": [
+                        {
+                            "description": "1 meses",
+                            "correctly": false,
+                            "id": 25
+                        },
+                        {
+                            "description": "3 meses",
+                            "correctly": false,
+                            "id": 26
+                        },
+                        {
+                            "description": "360 meses",
+                            "correctly": false,
+                            "id": 27
+                        },
+                        {
+                            "description": "6 a 12 meses",
+                            "correctly": true,
+                            "id": 28
+                        }
+                    ]
+                },
+                {
+                    "description": "Quais investimentos são recomendados para a reserva de emergência ? ",
+                    "id": 8,
+                    "answers": [
+                        {
+                            "description": "Bitcoin",
+                            "correctly": false,
+                            "id": 29
+                        },
+                        {
+                            "description": "Ações",
+                            "correctly": false,
+                            "id": 30
+                        },
+                        {
+                            "description": "Dolar",
+                            "correctly": false,
+                            "id": 31
+                        },
+                        {
+                            "description": "Tesouro Direto, CBD's, LCI ou LCA com liquidação diária",
+                            "correctly": true,
+                            "id": 32
+                        }
+                    ]
+                },
+                {
+                    "description": "Qual a importância de ter uma reserva de emergência ?",
+                    "id": 9,
+                    "answers": [
+                        {
+                            "description": "Ter muito dinheiro guardado",
+                            "correctly": false,
+                            "id": 33
+                        },
+                        {
+                            "description": "Comprar uma casa",
+                            "correctly": false,
+                            "id": 34
+                        },
+                        {
+                            "description": "Pedir demissão",
+                            "correctly": false,
+                            "id": 35
+                        },
+                        {
+                            "description": "Estar preparado para futuros imprevistos",
+                            "correctly": true,
+                            "id": 36
+                        }
+                    ]
+                },
+                {
+                    "description": "Quando utilizar a reserva de emergência ?",
+                    "id": 10,
+                    "answers": [
+                        {
+                            "description": "Na páscoa, dia das crianças e natal chegar",
+                            "correctly": false,
+                            "id": 37
+                        },
+                        {
+                            "description": "Quando surgir uma oportunidade de ganhar 30% ao ano",
+                            "correctly": false,
+                            "id": 38
+                        },
+                        {
+                            "description": "Quando surgir a necessidade, devido a uma crise, falta de emprego ou acidente",
+                            "correctly": true,
+                            "id": 39
+                        },
+                        {
+                            "description": "Nunca utilizar",
+                            "correctly": false,
+                            "id": 40
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

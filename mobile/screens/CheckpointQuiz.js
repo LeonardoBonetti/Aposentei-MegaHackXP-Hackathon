@@ -4,6 +4,7 @@ import { GetUserSettings, SetUserSettings } from '../Services/UserController';
 import { simpleAlert, simpleAlertCallback } from '../utils/Alerts';
 import QuizComponent from '../components/QuizComponent';
 import DefaultButton from '../components/DefaultButton';
+import Api from '../Services/Api';
 
 export default function CheckpointQuiz({ route, navigation }) {
 
@@ -36,118 +37,16 @@ export default function CheckpointQuiz({ route, navigation }) {
   useEffect(() => {
     async function getQuizData() {
       var { trailID } = route.params;
-      var quiz = {
-        trailID: trailID,
-        title: 'O que é viver de renda?',
-        reward: 101,
-        questions: [
-          {
-            description: 'A partir de quantos anos um investimento é considerado "Longo Prazo" ?',
-            id: 1,
-            answers: [
-              {
-                description: '1 ano',
-                correctly: false,
-                id: 1
-              },
-              {
-                description: '1 a 3 anos',
-                correctly: false,
-                id: 2
-              },
-              {
-                description: '5 anos',
-                correctly: false,
-                id: 3
-              },
-              {
-                description: 'Acima de 10 anos',
-                correctly: true,
-                id: 4
-              }
-            ],
-          },
-          {
-            description: 'O Que é reserva de emergência ?',
-            id: 2,
-            answers: [
-              {
-                description: 'Dinheiro investido em renda ações',
-                correctly: false,
-                id: 5
-              },
-              {
-                description: 'Dinheiro investido em criptomoedas',
-                correctly: false,
-                id: 6
-              },
-              {
-                description: 'Dinheiro que representa de 6 a 12 meses do seu custo de vida',
-                correctly: true,
-                id: 7
-              },
-              {
-                description: 'Não sei',
-                correctly: false,
-                id: 8
-              }
-            ],
-          },
-          {
-            description: 'A partir de quantos R$ eu posso começar a investir ?',
-            id: 3,
-            answers: [
-              {
-                description: '10 mil reais',
-                correctly: false,
-                id: 9
-              },
-              {
-                description: '1 mil reais',
-                correctly: false,
-                id: 10
-              },
-              {
-                description: '300 reais',
-                correctly: false,
-                id: 11
-              },
-              {
-                description: 'Menos de 1 real',
-                correctly: true,
-                id: 12
-              }
-            ],
-          },
-          {
-            description: 'A partir de quantos anos um investimento é considerado "Longo Prazo" ?',
-            id: 4,
-            answers: [
-              {
-                description: '1 ano',
-                correctly: false,
-                id: 13
-              },
-              {
-                description: '1 a 3 anos',
-                correctly: false,
-                id: 14
-              },
-              {
-                description: '5 anos',
-                correctly: false,
-                id: 15
-              },
-              {
-                description: 'Acima de 10 anos',
-                correctly: true,
-                id: 16
-              }
-            ],
-          }
-        ]
-      };
-      setQuiz(quiz);
+      await Api.get(`/quizTrail/${trailID}`)
+        .then(function (response) {
+          var _resp = JSON.parse(response.request._response);
+          setQuiz(_resp);
+        }.bind(this))
+        .catch(function (error) {
+          console.log(error);
+        }.bind(this))
+        .finally(function () {
+        }.bind(this));
     };
     getQuizData();
   }, []);
@@ -163,7 +62,7 @@ export default function CheckpointQuiz({ route, navigation }) {
 
       if (correcltyAnswers >= Math.ceil(quizAnswers.length * 0.7)) {
         var _user = user;
-        user.coins += quiz.reward + (correcltyAnswers * 2);
+        user.coins += quiz.reward + (correcltyAnswers * 10);
         user.trailID += 1;
         setUser(_user);
         await SetUserSettings(_user);
@@ -201,7 +100,7 @@ export default function CheckpointQuiz({ route, navigation }) {
         </View>
       </TouchableOpacity> */}
 
-      <DefaultButton enabled={user.trailID <= quiz.trailID} onClick={handleSendQuiz} text={"Enviar"} />
+      <DefaultButton enabled={user.trailID <= quiz.id} onClick={handleSendQuiz} text={"Enviar"} />
 
     </View>
   );

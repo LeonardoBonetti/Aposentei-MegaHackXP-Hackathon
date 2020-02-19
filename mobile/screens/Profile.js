@@ -18,6 +18,7 @@ export default function Profile() {
         style={[styles.scrollView, { Height: "auto" }]}
         contentContainerStyle={styles.scrollViewContainer}
       >
+        <Text style={{ fontSize: 25, marginTop: 50 }}>Em desenvolvimento</Text>
       </ScrollView>
     </View>
   );

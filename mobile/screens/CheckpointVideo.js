@@ -1,9 +1,10 @@
 import React, { useState, useEffect, } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, ScrollView } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, ScrollView, Image } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { GetUserSettings, SetUserSettings } from '../Services/UserController';
 import { simpleAlertCallback } from '../utils/Alerts';
 import DefaultButton from '../components/DefaultButton';
+import Api from '../Services/Api';
 
 
 export default function CheckpointVideo({ route, navigation }) {
@@ -24,17 +25,18 @@ export default function CheckpointVideo({ route, navigation }) {
   useEffect(() => {
     async function getQuizData() {
       var { trailID } = route.params;
-
-      var paragraphs = 'A liberdade financeira, nada mais é que a liberdade que um indivíduo alcança no campo das finanças. Atingido o patamar da liberdade financeira, é possível tomar decisões financeiras com maior tranqüilidade – como optar ou não, por exemplo, por realizar um trabalho.;Quando uma pessoa atinge a sua liberdade financeira as preocupações excessivas com o dinheiro acabam diminuindo, pois o foco principal poderá ser direcionado para a construção da vida financeira e acumulação de patrimônio – permitindo que esta pessoa faça escolha financeiras com maior tranqüilidade.;Apesar disso, é importante ter em mente que, conceitualmente, é possível que uma pessoa tenha sua liberdade financeira sem, necessariamente, ter alcançado a  independência financeira. Mesmo porque existem pessoas que simplesmente não desejam alcançar a independência financeira, apenas procuram alcançar a liberdade no campo das finanças.'
-
-      var video = {
-        trailID: trailID,
-        title: 'Investindo em coelhos asassinos !',
-        reward: 10,
-        paragraphs: paragraphs.split(';'),
-        url: 'https://storage.googleapis.com/hackaton-xp/y2mate.com%20-%20jhsf3_jhsf_participaoes_a_empresa_mais_luxuosa_da_bolsa_empresas_da_bolsa_6_pLsN2wK8ZSY_360p.mp4'
-      };
-      setvideoState(video);
+      await Api.get(`/youtubeTrail/${trailID}`)
+        .then(function (response) {
+          var _resp = JSON.parse(response.request._response);
+          var paragraphs = _resp.paragraphs;
+          _resp.paragraphs = paragraphs.split(';');
+          setvideoState(_resp);
+        }.bind(this))
+        .catch(function (error) {
+          console.log(error);
+        }.bind(this))
+        .finally(function () {
+        }.bind(this));
     };
 
     getQuizData();
@@ -74,8 +76,11 @@ export default function CheckpointVideo({ route, navigation }) {
               <Text style={styles.paragraph}>{p}</Text>
             ))
           }
+          <Text style={styles.productsHeader}>Melhores investimentos</Text>
+          <Image style={styles.products} source={require('../assets/images/produtos.png')} />
+
         </View>
-        <DefaultButton enabled={user.trailID <= videoState.trailID} onClick={handleCompleteTrail} text={"Marcar como visto"} />
+        <DefaultButton enabled={user.trailID <= videoState.id} onClick={handleCompleteTrail} text={"Marcar como visto"} />
       </ScrollView>
     </View>
 
@@ -118,6 +123,19 @@ const styles = StyleSheet.create({
   buttonText: {
     color: 'white'
   },
+  productsHeader: {
+    textAlign: 'justify',
+    marginBottom: 10,
+    marginTop: 10,
+    fontSize: 20,
+    fontWeight: 'bold'
+  },
+  products: {
+    resizeMode: 'cover',
+    width: '90%',
+    height: 270,
+    alignSelf: 'center'
+  }
 })
 
 CheckpointVideo.navigationOptions = {

@@ -4,8 +4,9 @@ import { ScrollView } from 'react-native-gesture-handler';
 import Product from '../components/Product';
 import { GetUserSettings } from '../Services/UserController';
 import { confirmAlert, simpleAlert } from '../utils/Alerts';
- 
-export default function Store() {
+import UserHeader from '../components/UserHeader';
+
+export default function Store({ navigation }) {
 
   const [products, setProducts] = useState([
     {
@@ -31,52 +32,62 @@ export default function Store() {
   ]);
   const [user, setUser] = useState({});
 
+  // useEffect(() => {
+  //   async function setUserAsync() {
+  //     var user = await GetUserSettings();
+  //     setUser(user);
+  //   };
+  //   setUserAsync();
+  // }, []);
+
   useEffect(() => {
-    async function setUserAsync() {
-      var user = await GetUserSettings();
-      setUser(user);
-    };
-    setUserAsync();
-  }, []);
-  
+    const unsubscribe = navigation.addListener('focus', () => {
+      async function setUserAsync() {
+        var user = await GetUserSettings();
+        setUser(user);
+      };
+      setUserAsync();
+    });
+    return unsubscribe;
+  }, [navigation]);
+
   function setscrollView(scroll) {
     // scroll.
   };
 
   function handleBuyButton(e, item) {
 
-    if(user.coins >= item.price)
-    {
+    if (user.coins >= item.price) {
       confirmAlert('Confirme a troca', `Tem certeza que deseja obter o ${item.type}`, () => handleConfirmButton(item))
     }
-    else
-    {
-      simpleAlert('Ops','Você não possui moedas suficiente, ganhe moedas na aba "Aprenda"')
+    else {
+      simpleAlert('Ops', 'Você não possui moedas suficiente, ganhe moedas na aba "Aprenda"')
     }
   }
 
-  function handleConfirmButton(item)
-  {      
+  function handleConfirmButton(item) {
     //TODO Debitar
     simpleAlert('Já é seu !', 'Parabéns, você deu mais um passo rumo a sua liberdade financeira !')
   }
 
   return (
     <View style={styles.container}>
-    <ScrollView
-      ref={(scroll) => { setscrollView(scroll) }}
-      style={[styles.scrollView, { Height: "auto"}]}
-      contentContainerStyle={styles.scrollViewContainer}
-    >          
-      {
+      <UserHeader coins={user.coins} trailID={user.trailID} />
+
+      <ScrollView
+        ref={(scroll) => { setscrollView(scroll) }}
+        style={[styles.scrollView, { Height: "auto" }]}
+        contentContainerStyle={styles.scrollViewContainer}
+      >
+        {
           products.map(p =>
             (
               <Product key={p.id} product={p} enabled={p.price <= user.coins} onClick={handleBuyButton} />
             )
           )
         }
-    </ScrollView>
-  </View>
+      </ScrollView>
+    </View>
   );
 }
 

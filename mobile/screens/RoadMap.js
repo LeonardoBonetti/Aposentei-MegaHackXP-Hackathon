@@ -25,15 +25,17 @@ export default function RoadMap({ navigation }) {
   }, [navigation]);
 
   useEffect(() => {
+
     async function getTrails() {
-      const response = await Api.get(`/Roadmap`)
+      await Api.get(`/trails`)
         .then(function (response) {
-          console.log(response);
+          setcheckPoints(JSON.parse(response.request._response))
         }.bind(this))
         .catch(function (error) {
           console.log(error);
         }.bind(this))
         .finally(function () {
+          console.log('chamou');
         }.bind(this));
     };
 
