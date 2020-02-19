@@ -4,7 +4,7 @@
 
 
 ### Quem somos
-Aposentei veio para mudar o mindset das pessoas. Monstrando que investir é para todos e além disso,, acompanha-lo passo a passo rumo a sua liberdade financeira.
+Aposentei veio para mudar o mindset das pessoas. Monstrando que investir é para todos e além disso, acompanha-lo passo a passo rumo a sua liberdade financeira.
 
 ### Desafio
 
