@@ -8,18 +8,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Hackaton.Infra.Data.Repository
 {
-    public class UserRepository : BaseRepository<UserEntity>, IUserRepository
+    public class UserRepository : BaseRepository<User>, IUserRepository
     {
         protected readonly MyContext _context;
-        private DbSet<UserEntity> _dataset;
+        private DbSet<User> _dataset;
 
         public UserRepository(MyContext context) : base(context)
         {
             _context = context;
-            _dataset = _context.Set<UserEntity>();
+            _dataset = _context.Set<User>();
         }
 
-        public async Task<UserEntity> LoginAsync(UserEntity user)
+        public async Task<User> LoginAsync(User user)
         {
             try
             {

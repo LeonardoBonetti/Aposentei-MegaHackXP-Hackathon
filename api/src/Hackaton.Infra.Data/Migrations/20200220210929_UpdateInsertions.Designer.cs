@@ -3,14 +3,16 @@ using System;
 using Hackaton.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Data.Migrations
 {
     [DbContext(typeof(MyContext))]
-    partial class MyContextModelSnapshot : ModelSnapshot
+    [Migration("20200220210929_UpdateInsertions")]
+    partial class UpdateInsertions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,11 +41,6 @@ namespace Data.Migrations
                     b.HasIndex("TypeID");
 
                     b.ToTable("Trails");
-
-                    b.HasData(
-                        new { Id = 1, CreateAt = new DateTime(2020, 2, 20, 18, 15, 33, 124, DateTimeKind.Local), Description = "Desc Trilha 1", Reward = 1, Title = "Trila 1", TypeID = 1 },
-                        new { Id = 2, CreateAt = new DateTime(2020, 2, 20, 18, 15, 33, 124, DateTimeKind.Local), Description = "Desc Trilha 2", Reward = 1, Title = "Trila 2", TypeID = 1 }
-                    );
                 });
 
             modelBuilder.Entity("Hackaton.Domain.Entities.TrailType", b =>
@@ -63,9 +60,9 @@ namespace Data.Migrations
                     b.ToTable("TrailType");
 
                     b.HasData(
-                        new { Id = 1, CreateAt = new DateTime(2020, 2, 20, 18, 15, 33, 127, DateTimeKind.Local), Description = "Text" },
-                        new { Id = 2, CreateAt = new DateTime(2020, 2, 20, 18, 15, 33, 127, DateTimeKind.Local), Description = "Video" },
-                        new { Id = 3, CreateAt = new DateTime(2020, 2, 20, 18, 15, 33, 127, DateTimeKind.Local), Description = "Quiz" }
+                        new { Id = 1, CreateAt = new DateTime(2020, 2, 20, 18, 9, 28, 906, DateTimeKind.Local), Description = "Text" },
+                        new { Id = 2, CreateAt = new DateTime(2020, 2, 20, 18, 9, 28, 907, DateTimeKind.Local), Description = "Video" },
+                        new { Id = 3, CreateAt = new DateTime(2020, 2, 20, 18, 9, 28, 907, DateTimeKind.Local), Description = "Quiz" }
                     );
                 });
 

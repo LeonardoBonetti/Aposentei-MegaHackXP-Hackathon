@@ -5,19 +5,20 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Hackaton.Infra.Data.Mapping
 {
-    public class UserMap : IEntityTypeConfiguration<UserEntity>
+    public class UserMap : IEntityTypeConfiguration<User>
     {
-        public void Configure(EntityTypeBuilder<UserEntity> builder)
+        public void Configure(EntityTypeBuilder<User> builder)
         {
             builder.ToTable("Users");
             builder.HasKey(p => p.Id);
             builder.HasIndex(p => p.Email).IsUnique();
 
-            builder.Property(c => c.Id).ValueGeneratedOnAdd();
-            builder.Property(c => c.Password).IsRequired().HasMaxLength(32);
-            builder.Property(c => c.Email).IsRequired().HasMaxLength(256);
-            builder.Property(c => c.Coins).HasDefaultValue(0);
-            builder.Property(c => c.TrailID);
+            builder.Property(p => p.Id).ValueGeneratedOnAdd();
+            builder.Property(p => p.Password).IsRequired().HasMaxLength(32);
+            builder.Property(p => p.Email).IsRequired().HasMaxLength(256);
+            builder.Property(p => p.Coins).HasDefaultValue(0);
+            builder.HasOne(p => p.Trail).WithMany(x => x.Users).HasForeignKey(p => p.TrailID);
+
         }
     }
 }
