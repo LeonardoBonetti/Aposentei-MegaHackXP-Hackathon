@@ -11,10 +11,10 @@ namespace Hackaton.Application.AutoMapper
     {
         public DTOToDomainMapProfile()
         {
-            CreateMap<UserEntityDto, UserEntity>();
-            CreateMap<UserLoginRequestDto, UserEntity>();
-            CreateMap<UserRegisterRequestDto, UserEntity>();
-            CreateMap<UserResponseDto, UserEntity>();
+            CreateMap<UserEntityDto, User>();
+            CreateMap<UserLoginRequestDto, User>();
+            CreateMap<UserRegisterRequestDto, User>();
+            CreateMap<UserResponseDto, User>();
         }
     }
 }

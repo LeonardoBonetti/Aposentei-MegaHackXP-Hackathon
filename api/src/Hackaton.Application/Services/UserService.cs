@@ -38,7 +38,7 @@ namespace Hackaton.Infra.Data.Repository
                     };
                 }
 
-                var result = _mapper.Map<UserEntityDto>((await _repository.LoginAsync(_mapper.Map<UserEntity>(login))));
+                var result = _mapper.Map<UserEntityDto>((await _repository.LoginAsync(_mapper.Map<User>(login))));
 
                 if (result != null)
                 {
@@ -96,7 +96,7 @@ namespace Hackaton.Infra.Data.Repository
                 }
                 else
                 {
-                    var result = _mapper.Map<UserEntityDto>(await _repository.InsertAsync(_mapper.Map<UserEntity>(register)));
+                    var result = _mapper.Map<UserEntityDto>(await _repository.InsertAsync(_mapper.Map<User>(register)));
 
                     return new UserRegisterResponseDto()
                     {
@@ -119,7 +119,7 @@ namespace Hackaton.Infra.Data.Repository
         public async Task<UserResponseDto> UpdateTrailUser(UpdateUserTrailRequestDto trail)
         {
             var user = await _repository.SelectAsync(trail.UserID);
-            if(user == null)
+            if (user == null)
                 throw new Exception("usuário não encontrado");
 
             //Validação para verificar se trilha existe

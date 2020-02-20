@@ -5,7 +5,7 @@ using Hackaton.Domain.Entities;
 
 namespace Hackaton.Domain.Interfaces
 {
-    public interface ITrailTypeRepository : IRepository<TrailTypeEntity>
+    public interface ITrailTypeRepository : IRepository<TrailType>
     {
     }
 }

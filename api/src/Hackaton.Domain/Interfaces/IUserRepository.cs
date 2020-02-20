@@ -5,9 +5,9 @@ using Hackaton.Domain.Entities;
 
 namespace Hackaton.Domain.Interfaces
 {
-    public interface IUserRepository : IRepository<UserEntity>
+    public interface IUserRepository : IRepository<User>
     {
-        Task<UserEntity> LoginAsync(UserEntity user);
+        Task<User> LoginAsync(User user);
         Task<bool> UserExists(string email);
     }
 }
