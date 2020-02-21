@@ -16,6 +16,7 @@ namespace Hackaton.Infra.Data.Mapping
             builder.Property(p => p.Id).ValueGeneratedOnAdd();
             builder.Property(p => p.Password).IsRequired().HasMaxLength(32);
             builder.Property(p => p.Email).IsRequired().HasMaxLength(256);
+            builder.Property(p => p.FullName).IsRequired().HasMaxLength(256);
             builder.Property(p => p.Coins).HasDefaultValue(0);
             builder.HasOne(p => p.Trail).WithMany(x => x.Users).HasForeignKey(p => p.TrailID);
 
