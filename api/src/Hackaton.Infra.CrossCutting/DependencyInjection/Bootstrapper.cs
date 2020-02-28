@@ -25,6 +25,9 @@ namespace Hackaton.CrossCutting.DependencyInjection
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ITrailService, TrailService>();
             services.AddScoped<ITrailTypeService, TrailTypeService>();
+            services.AddScoped<IVideoTrailService, VideoTrailService>();
+            services.AddScoped<ITextTrailService, TextTrailService>();
+            services.AddScoped<IQuizTrailService, QuizTrailService>();
         }
         private static void AddRepositories(this IServiceCollection services)
         {
@@ -32,6 +35,9 @@ namespace Hackaton.CrossCutting.DependencyInjection
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ITrailRepository, TrailRepository>();
             services.AddScoped<ITrailTypeRepository, TrailTypeRepository>();
+            services.AddScoped<IVideoTrailRepository, VideoTrailRepository>();
+            services.AddScoped<ITextTrailRepository, TextTrailRepository>();
+            services.AddScoped<IQuizTrailRepository, QuizTrailRepository>();
         }
     }
 }

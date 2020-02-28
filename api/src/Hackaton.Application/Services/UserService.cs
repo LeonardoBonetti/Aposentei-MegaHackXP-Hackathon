@@ -64,7 +64,7 @@ namespace Hackaton.Infra.Data.Repository
                 return new UserLoginResponseDto()
                 {
                     Sucess = false,
-                    Message = "Ocorreu um erro, tente novamente"
+                    Message = "Ocorreu um erro, tente novamente " + e.Message
                 };
             }
 
@@ -111,7 +111,7 @@ namespace Hackaton.Infra.Data.Repository
                 return new UserRegisterResponseDto()
                 {
                     Sucess = false,
-                    Message = "Ocorreu um erro, tente novamente"
+                    Message = "Ocorreu um erro, tente novamente " + e.Message
                 };
             }
         }

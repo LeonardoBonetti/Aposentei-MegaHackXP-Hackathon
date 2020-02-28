@@ -13,5 +13,6 @@ namespace Hackaton.Domain.Entities
         public int Coins { get; set; }
         public int TrailID { get; set; }
         public Trail Trail { get; set; }
+        public int Level { get; set; }
     }
 }

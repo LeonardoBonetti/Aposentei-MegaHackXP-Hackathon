@@ -15,6 +15,12 @@ namespace Hackaton.Application.AutoMapper
             CreateMap<UserLoginRequestDto, User>();
             CreateMap<UserRegisterRequestDto, User>();
             CreateMap<UserResponseDto, User>();
+            CreateMap<TrailAddDto, Trail>();
+            CreateMap<VideoTrailAddRequestDto, VideoTrail>();
+            CreateMap<TextTrailAddRequestDto, TextTrail>();
+            CreateMap<QuizAnswersTrailAddRequestDto, QuizAnswersTrail>();
+            CreateMap<QuizTrailAddRequestDto, QuizTrail>();
+
         }
     }
 }
