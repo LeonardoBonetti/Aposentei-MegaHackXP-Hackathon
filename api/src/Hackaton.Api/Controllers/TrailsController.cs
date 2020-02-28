@@ -13,9 +13,22 @@ namespace Hackaton.Api.Controllers
     public class TrailsController : ControllerBase
     {
         private readonly ITrailService _trailService;
-        public TrailsController(ITrailService service)
+        private readonly IVideoTrailService _videoTrailService;
+        private readonly ITextTrailService _textTrailService;
+        private readonly IQuizTrailService _quizTrailService;
+
+        public TrailsController(
+            ITrailService trailService,
+            IVideoTrailService videoTrailService,
+            ITextTrailService textTrailService,
+            IQuizTrailService quizTrailService
+
+            )
         {
-            _trailService = service;
+            _trailService = trailService;
+            _videoTrailService = videoTrailService;
+            _textTrailService = textTrailService;
+            _quizTrailService = quizTrailService;
         }
 
         [HttpGet]
@@ -31,12 +44,51 @@ namespace Hackaton.Api.Controllers
             }
         }
 
-        [HttpGet("ID")]
+        [HttpGet("/trails/{ID}")]
         public async Task<ActionResult> GetByID(int ID)
         {
             try
             {
                 return Ok(await _trailService.GetByID(ID));
+            }
+            catch (Exception e)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
+            }
+        }
+
+        [HttpPost("AddVideo")]
+        public async Task<ActionResult> AddVideo(VideoTrailAddRequestDto request)
+        {
+            try
+            {
+                return Ok(await _videoTrailService.Add(request));
+            }
+            catch (Exception e)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
+            }
+        }
+
+        [HttpPost("AddText")]
+        public async Task<ActionResult> AddText(TextTrailAddRequestDto request)
+        {
+            try
+            {
+                return Ok(await _textTrailService.Add(request));
+            }
+            catch (Exception e)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
+            }
+        }
+
+        [HttpPost("AddQuiz")]
+        public async Task<ActionResult> AddQuiz(QuizTrailAddRequestDto request)
+        {
+            try
+            {
+                return Ok(await _quizTrailService.Add(request));
             }
             catch (Exception e)
             {
