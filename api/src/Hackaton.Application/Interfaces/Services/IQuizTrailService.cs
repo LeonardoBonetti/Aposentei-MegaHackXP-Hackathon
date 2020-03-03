@@ -9,5 +9,7 @@ namespace Hackaton.Application.Interfaces.Services
     public interface IQuizTrailService
     {
         Task<int> Add(QuizTrailAddRequestDto request);
+        Task<QuizTrailGetResponseDto> Get(int id);
+
     }
 }

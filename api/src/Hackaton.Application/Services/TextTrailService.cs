@@ -8,6 +8,7 @@ using System.Linq;
 using System;
 using Hackaton.Domain.Entities;
 using Hackaton.Domain.Enums;
+using Hackaton.Application.Exceptions;
 
 namespace Hackaton.Infra.Data.Repository
 {
@@ -39,6 +40,19 @@ namespace Hackaton.Infra.Data.Repository
             {
                 throw new Exception("Erro ao inserir os dados");
             }
+        }
+
+        public async Task<TextTrailGetResponseDto> Get(int id)
+        {
+            TextTrail trail = await _repository.SelectTrailByID(id);
+            TextTrailGetResponseDto trailDto = _mapper.Map<TextTrailGetResponseDto>(trail);
+
+            if (trail == null)
+            {
+                throw new NotFoundException();
+            }
+
+            return trailDto;
         }
     }
 }

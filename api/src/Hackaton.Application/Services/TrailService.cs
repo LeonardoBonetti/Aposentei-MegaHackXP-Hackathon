@@ -37,14 +37,5 @@ namespace Hackaton.Infra.Data.Repository
 
             return response;
         }
-
-        public async Task<TrailResponseDto> GetByID(int ID)
-        {
-            var result = await _repository.SelectAsync(ID);
-            var dto = _mapper.Map<TrailResponseDto>(result);
-            // dto.TrailTypeDto = await _trailTypeService.GetByID(result.TypeID);
-            return dto;
-        }
-
     }
 }

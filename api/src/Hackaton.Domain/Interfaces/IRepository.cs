@@ -12,6 +12,5 @@ namespace Hackaton.Domain.Interfaces
         Task<bool> DeleteAsync(int id);
         Task<T> SelectAsync(int id);
         Task<IEnumerable<T>> SelectAsync();
-
     }
 }

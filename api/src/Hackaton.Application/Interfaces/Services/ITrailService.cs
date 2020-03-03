@@ -9,6 +9,5 @@ namespace Hackaton.Application.Interfaces.Services
     public interface ITrailService
     {
         Task<IEnumerable<TrailResponseDto>> GetAll();
-        Task<TrailResponseDto> GetByID(int ID);
     }
 }

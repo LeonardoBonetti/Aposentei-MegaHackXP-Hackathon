@@ -13,7 +13,8 @@ namespace Hackaton.Domain.Entities
         public int Reward { get; set; }
         public int TypeID { get; set; }
         public TrailType TrailType { get; set; }
-        public List<User> Users { get; set; }
+        public ICollection<User> Users { get; set; }
+        public ICollection<VideoTrail> VideoTrails { get; set; }
 
     }
 }

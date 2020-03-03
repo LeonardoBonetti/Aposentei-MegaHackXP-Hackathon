@@ -9,5 +9,6 @@ namespace Hackaton.Application.Interfaces.Services
     public interface IVideoTrailService
     {
         Task<int> Add(VideoTrailAddRequestDto request);
+        Task<VideoTrailGetResponseDto> Get(int id);
     }
 }

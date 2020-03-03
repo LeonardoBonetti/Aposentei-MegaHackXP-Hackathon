@@ -9,5 +9,8 @@ namespace Hackaton.Application.Interfaces.Services
     public interface ITextTrailService
     {
         Task<int> Add(TextTrailAddRequestDto request);
+
+        Task<TextTrailGetResponseDto> Get(int id);
+
     }
 }
