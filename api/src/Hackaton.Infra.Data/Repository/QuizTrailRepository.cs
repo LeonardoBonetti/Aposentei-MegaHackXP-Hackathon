@@ -18,5 +18,17 @@ namespace Hackaton.Infra.Data.Repository
             _context = context;
             _dataset = _context.Set<QuizTrail>();
         }
+
+        public async Task<QuizTrail> SelectTrailByID(int id)
+        {
+            try
+            {
+                return await _dataset.SingleOrDefaultAsync(p => p.Trail.Id.Equals(id));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace Hackaton.Infra.Data.Mapping
         {
             builder.ToTable("VideoTrails");
             builder.HasKey(p => p.Id);
-            builder.HasOne(p => p.Trail).WithMany().HasForeignKey(p => p.TrailID);
+            builder.HasOne(p => p.Trail).WithMany(x => x.VideoTrails).HasForeignKey(p => p.TrailID);
 
             builder.Property(p => p.Title).IsRequired();
             builder.Property(p => p.Description).IsRequired();
